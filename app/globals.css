@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Quicksand:wght@400;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-white text-gray-900 font-serif;
+}
+
+/* Solid color alternatives */
+.bg-warm-solid {
+  background-color: #F5E9DA;
+}
+
+.text-shadow-soft {
+  text-shadow: 0 2px 4px rgba(166, 124, 82, 0.1);
+}
+
+.shadow-warm {
+  box-shadow: 0 4px 12px rgba(166, 124, 82, 0.15);
+}
+
+/* Solid text color instead of gradient */
+.text-accent-solid {
+  color: #A67C52;
+}
+
+/* Enhanced animations */
+@keyframes gentleFadeIn {
+  from { 
+    opacity: 0; 
+    transform: translateY(10px); 
+  }
+  to { 
+    opacity: 1; 
+    transform: translateY(0); 
+  }
+}
+
+.animate-gentle {
+  animation: gentleFadeIn 0.8s ease-out;
+}
+
+/* Hover effects */
+.hover-gentle {
+  transition: all 0.3s ease;
+}
+
+.hover-gentle:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(166, 124, 82, 0.15);
+}
+
+.hover-lift {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(166, 124, 82, 0.15);
+}
+
+/* Enhanced focus states */
+button:focus, a:focus {
+  outline: 2px solid #A67C52;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Image loading improvements */
+img {
+  max-width: 100%;
+  height: auto;
+  transition: opacity 0.3s ease;
+}
+
+/* Mobile optimizations */
+@media (max-width: 640px) {
+  /* Ensure minimum touch target size */
+  button, a {
+    min-height: 48px;
+    min-width: 48px;
+  }
+  
+  /* Improve text readability on mobile */
+  p {
+    line-height: 1.6;
+  }
+  
+  /* Better spacing for mobile */
+  .space-y-4 > * + * {
+    margin-top: 1rem;
+  }
+  
+  .space-y-6 > * + * {
+    margin-top: 1.5rem;
+  }
+  
+  .space-y-8 > * + * {
+    margin-top: 2rem;
+  }
+  
+  .mobile-optimized {
+    font-size: 16px; /* Prevents zoom on iOS */
+  }
+  
+  .touch-target {
+    min-height: 48px;
+    min-width: 48px;
+  }
+}
+
+/* Prevent horizontal scroll on mobile */
+html, body {
+  overflow-x: hidden;
+}
+
+/* Enhanced backdrop blur */
+.backdrop-blur-enhanced {
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+} 
