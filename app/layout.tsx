@@ -23,8 +23,8 @@ function Navbar() {
       
       {/* Center Logo */}
       <div className="flex items-center space-x-6 sm:space-x-10 lg:space-x-16">
-        <a href="/menu" className="hidden sm:block text-gray-600 hover:text-accent font-light text-base sm:text-lg lg:text-xl transition-all duration-300 hover:scale-105">Menu</a>
-        <a href="/locations" className="hidden sm:block text-gray-600 hover:text-accent font-light text-base sm:text-lg lg:text-xl transition-all duration-300 hover:scale-105">Locations</a>
+        <a href="/locations/chicago" className="hidden sm:block text-gray-600 hover:text-accent font-light text-base sm:text-lg lg:text-xl transition-all duration-300 hover:scale-105">Chicago</a>
+        <a href="/locations/evanston" className="hidden sm:block text-gray-600 hover:text-accent font-light text-base sm:text-lg lg:text-xl transition-all duration-300 hover:scale-105">Evanston</a>
         
         <a href="/" className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-serif font-bold text-accent tracking-tight hover:text-gray-800 transition-all duration-300 px-4 sm:px-6 hover:scale-105">
           Outdoor Café
@@ -59,18 +59,18 @@ function Navbar() {
                   Home
                 </a>
                 <a 
-                  href="/menu" 
+                  href="/locations/chicago" 
                   className="block text-gray-600 hover:text-accent font-light text-xl transition-all duration-300 py-3 hover:translate-x-2"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
-                  Menu
+                  Chicago
                 </a>
                 <a 
-                  href="/locations" 
+                  href="/locations/evanston" 
                   className="block text-gray-600 hover:text-accent font-light text-xl transition-all duration-300 py-3 hover:translate-x-2"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
-                  Locations
+                  Evanston
                 </a>
                 <a 
                   href="/about" 
@@ -100,7 +100,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
     <html lang="en">
       <head>
         <title>Outdoor Café</title>
-        <meta name="description" content="Cozy outdoor café with fresh pastries and delicious coffee" />
+        <meta name="description" content="Cozy outdoor café with aromatic coffee, refreshing smoothies, delicious boba tea, and flavorful Banh Mi" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </head>
       <body className="bg-white text-gray-900 font-serif min-h-screen flex flex-col">

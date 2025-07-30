@@ -1,6 +1,6 @@
 # Outdoor Café
 
-A modern, clean website for Outdoor Café featuring a beautiful outdoor dining experience with fresh pastries and delicious coffee.
+A modern, clean website for Outdoor Café featuring a beautiful outdoor dining experience with aromatic coffee, refreshing smoothies, delicious boba tea, and flavorful Banh Mi.
 
 ## Features
 

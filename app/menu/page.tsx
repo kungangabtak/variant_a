@@ -12,9 +12,9 @@ type MenuItem = {
 
 type MenuItems = {
   coffee: MenuItem[];
-  tea: MenuItem[];
-  pastries: MenuItem[];
-  breakfast: MenuItem[];
+  smoothies: MenuItem[];
+  bobaTea: MenuItem[];
+  sandwiches: MenuItem[];
 };
 
 const menuItems: MenuItems = {
@@ -23,20 +23,20 @@ const menuItems: MenuItems = {
     { name: "Latte", price: "$4.75", desc: "Smooth and creamy with art", img: "/latte.jpg" },
     { name: "Cappuccino", price: "$4.50", desc: "Perfectly balanced with steamed milk", img: "/cappuccino.jpg" },
   ],
-  tea: [
-    { name: "Earl Grey", price: "$3.25", desc: "Classic black tea with bergamot", img: "/earl-grey.jpg" },
-    { name: "Chai Latte", price: "$4.50", desc: "Spiced tea with steamed milk", img: "/chai.jpg" },
-    { name: "Green Tea", price: "$3.00", desc: "Light and refreshing", img: "/green-tea.jpg" },
+  smoothies: [
+    { name: "Tropical Mango", price: "$6.25", desc: "Mango, pineapple, and coconut", img: "/muffin.jpg" },
+    { name: "Berry Blast", price: "$6.50", desc: "Mixed berries with banana and yogurt", img: "/cookie.jpg" },
+    { name: "Green Goddess", price: "$6.75", desc: "Spinach, apple, banana, and lime", img: "/green-tea.jpg" },
   ],
-  pastries: [
-    { name: "Croissant", price: "$3.50", desc: "Buttery, flaky perfection", img: "/croissant.jpg" },
-    { name: "Blueberry Muffin", price: "$3.25", desc: "Fresh berries in every bite", img: "/muffin.jpg" },
-    { name: "Chocolate Chip Cookie", price: "$2.75", desc: "Warm and gooey", img: "/cookie.jpg" },
+  bobaTea: [
+    { name: "Classic Milk Tea", price: "$5.50", desc: "Traditional black tea with tapioca pearls", img: "/chai.jpg" },
+    { name: "Taro Milk Tea", price: "$5.75", desc: "Creamy taro with chewy boba", img: "/latte.jpg" },
+    { name: "Matcha Latte", price: "$6.00", desc: "Premium matcha with milk and boba", img: "/matcha-latte.png" },
   ],
-  breakfast: [
-    { name: "Avocado Toast", price: "$8.00", desc: "Sourdough with avocado, eggs, and herbs", img: "/avocado-toast.jpg" },
-    { name: "Breakfast Burrito", price: "$9.75", desc: "Eggs, cheese, and fresh salsa", img: "/burrito.jpg" },
-    { name: "Oatmeal Bowl", price: "$7.25", desc: "Steel-cut oats with berries and honey", img: "/oatmeal.jpg" },
+  sandwiches: [
+    { name: "Vietnamese Banh Mi", price: "$8.50", desc: "Crispy baguette with pork, pickled vegetables, and herbs", img: "/avocado-toast.jpg" },
+    { name: "Grilled Chicken Banh Mi", price: "$8.75", desc: "Marinated grilled chicken with fresh cilantro", img: "/burrito.jpg" },
+    { name: "Vegetarian Banh Mi", price: "$8.00", desc: "Tofu and fresh vegetables with Vietnamese flavors", img: "/oatmeal.jpg" },
   ],
 };
 
@@ -68,7 +68,10 @@ export default function MenuPage() {
                     : "border-transparent text-gray-600 hover:text-accent hover:border-gray-300"
                 }`}
               >
-                {category.charAt(0).toUpperCase() + category.slice(1)}
+                {category === 'bobaTea' ? 'Boba Tea' : 
+                 category === 'sandwiches' ? 'Sandwiches' :
+                 category === 'smoothies' ? 'Smoothies' :
+                 category.charAt(0).toUpperCase() + category.slice(1)}
               </button>
             ))}
           </div>
