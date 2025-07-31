@@ -203,47 +203,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Goodies to Go Section */}
-      <section className="py-20 sm:py-28 md:py-40 bg-white">
-        <div className="max-w-7xl mx-auto px-6 sm:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 sm:gap-16 lg:gap-20 items-center">
-            <div className="order-2 lg:order-1 fade-in-left">
-              <div className="relative overflow-hidden rounded-2xl shadow-warm-lg hover-lift transform rotate-1">
-                <img 
-                  src="/matcha-latte.png" 
-                  alt="Matcha Latte" 
-                  className="w-full h-80 sm:h-96 md:h-[550px] lg:h-[600px] object-cover transition-transform duration-500 hover:scale-105 img-warm-filter"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
-                <div className="absolute bottom-6 left-6 w-4 h-4 bg-white/40 rounded-full animate-float"></div>
-              </div>
-            </div>
-            
-            <div className="order-1 lg:order-2 space-y-6 sm:space-y-8 fade-in-right">
-              <div>
-                <h3 className="text-3xl sm:text-4xl lg:text-5xl font-light text-warm-dark mb-3 leading-tight">
-                  Need us to cater your thing?
-                </h3>
-                <div className="w-16 h-1 bg-accent-solid rounded-full mb-6"></div>
-              </div>
-              <div className="space-y-4 text-gray-700">
-                <p className="text-lg sm:text-xl leading-relaxed">
-                  Office meeting? Birthday party? Study group that's gotten way out of hand?
-                </p>
-                <p className="text-lg sm:text-xl leading-relaxed">
-                  We'll hook you up with all the good stuff — <span className="font-medium text-accent-solid">fresh coffee that doesn't taste like it came from a gas station, smoothies that actually have fruit in them, boba tea that'll make you forget your troubles, and Banh Mi that'll have everyone asking where you got it.</span>
-                </p>
-                <p className="text-base text-gray-600 italic">
-                  *We promise not to judge your meeting snack budget 😉
-                </p>
-              </div>
-              <div className="pt-2">
-                <Button href="/catering">Let's Talk Catering</Button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+
 
       {/* Sustainability Section */}
       <section className="py-24 sm:py-32 md:py-48 bg-warm-solid">
@@ -416,11 +376,7 @@ export default function Home() {
                 </div>
               </div>
               
-              <div className="pt-6 border-t border-accent-solid/20">
-                <p className="text-gray-700 font-light text-lg sm:text-xl">
-                  For catering inquiries: <span className="text-accent-solid hover:text-warm-dark transition-colors cursor-pointer font-medium">catering@outdoorcafe.com</span>
-                </p>
-              </div>
+
             </div>
           </div>
         </div>

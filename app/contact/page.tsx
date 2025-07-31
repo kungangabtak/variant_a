@@ -282,26 +282,14 @@ export default function Contact() {
               <h3 className="text-2xl sm:text-3xl font-light text-warm-dark mb-6 text-center">Additional Ways to Reach Us</h3>
               <div className="w-16 h-0.5 bg-accent-solid mx-auto rounded-full mb-8"></div>
               
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div className="text-center space-y-2">
-                  <div className="w-12 h-12 bg-accent-solid/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <span className="text-2xl">🍰</span>
-                  </div>
-                  <h4 className="text-lg font-medium text-gray-900">Catering & Events</h4>
-                  <a href="mailto:catering@outdoorcafe.com" className="text-accent-solid hover:text-warm-dark transition-colors font-medium">
-                    catering@outdoorcafe.com
-                  </a>
+              <div className="text-center max-w-xs mx-auto">
+                <div className="w-12 h-12 bg-accent-solid/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <span className="text-2xl">💼</span>
                 </div>
-                
-                <div className="text-center space-y-2">
-                  <div className="w-12 h-12 bg-accent-solid/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <span className="text-2xl">💼</span>
-                  </div>
-                  <h4 className="text-lg font-medium text-gray-900">General Inquiries</h4>
-                  <a href="mailto:hello@outdoorcafe.com" className="text-accent-solid hover:text-warm-dark transition-colors font-medium">
-                    hello@outdoorcafe.com
-                  </a>
-                </div>
+                <h4 className="text-lg font-medium text-gray-900 mb-2">General Inquiries</h4>
+                <a href="mailto:hello@outdoorcafe.com" className="text-accent-solid hover:text-warm-dark transition-colors font-medium">
+                  hello@outdoorcafe.com
+                </a>
               </div>
             </div>
           </div>
