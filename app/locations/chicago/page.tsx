@@ -12,7 +12,7 @@ type MenuItem = {
   category: string;
 };
 
-const chicagoMenu: MenuItem[] = [
+const northParkMenu: MenuItem[] = [
   {
     id: "filter-coffee",
     name: "Filter Coffee",
@@ -71,7 +71,7 @@ const chicagoMenu: MenuItem[] = [
   }
 ];
 
-export default function ChicagoMenuPage() {
+export default function NorthParkMenuPage() {
   const [selectedItem, setSelectedItem] = useState<MenuItem | null>(null);
 
   return (
@@ -84,7 +84,7 @@ export default function ChicagoMenuPage() {
         
         <div className="max-w-7xl mx-auto px-6 sm:px-8 text-center relative z-10">
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-light mb-6 text-warm-dark leading-tight text-balance">
-            Chicago Location
+            North Park Location
           </h1>
           <div className="w-24 h-1 bg-accent-solid mx-auto rounded-full mb-6"></div>
           <p className="text-xl sm:text-2xl text-gray-700 font-light max-w-3xl mx-auto leading-relaxed-plus text-balance">
@@ -92,7 +92,7 @@ export default function ChicagoMenuPage() {
           </p>
           <div className="mt-6">
             <p className="text-base sm:text-lg text-gray-600 font-light">
-              3257 West Bryn Mawr Avenue • Chicago, IL 60659
+              3257 West Bryn Mawr Avenue • North Park, IL 60659
             </p>
           </div>
         </div>
@@ -164,7 +164,7 @@ export default function ChicagoMenuPage() {
                   ☕ Coffee
                 </h3>
                 <div className="space-y-4">
-                  {chicagoMenu.filter(item => item.category === "Coffee").map((item) => (
+                  {northParkMenu.filter(item => item.category === "Coffee").map((item) => (
                     <div
                       key={item.id}
                       className={`flex justify-between items-center py-4 px-4 cursor-pointer transition-all duration-300 rounded-xl hover-gentle ${
@@ -190,7 +190,7 @@ export default function ChicagoMenuPage() {
                   🍽️ Food
                 </h3>
                 <div className="space-y-4">
-                  {chicagoMenu.filter(item => item.category === "Food").map((item) => (
+                  {northParkMenu.filter(item => item.category === "Food").map((item) => (
                     <div
                       key={item.id}
                       className={`flex justify-between items-center py-4 px-4 cursor-pointer transition-all duration-300 rounded-xl hover-gentle ${

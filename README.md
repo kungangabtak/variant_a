@@ -6,7 +6,7 @@ A modern, clean website for Outdoor Café featuring a beautiful outdoor dining e
 
 - **Clean, Modern Design**: Sleek UI with solid color backgrounds and excellent typography
 - **Responsive Layout**: Optimized for all devices with mobile-first approach
-- **Location Pages**: Dedicated pages for Chicago and Evanston locations with interactive menus
+- **Location Pages**: Dedicated pages for North Park and Evanston locations with interactive menus
 - **Menu System**: Interactive menu with category filtering and item details
 - **Consistent Branding**: Unified design language across all pages
 - **Performance Optimized**: Clean codebase with minimal dependencies
@@ -30,7 +30,7 @@ OutdoorCafe/
 │   │   └── page.tsx         # Main menu page
 │   └── locations/
 │       ├── chicago/
-│       │   └── page.tsx     # Chicago location menu
+│       │   └── page.tsx     # North Park location menu
 │       └── evanston/
 │           └── page.tsx     # Evanston location menu
 ├── public/                  # Static assets (images)
@@ -97,7 +97,7 @@ OutdoorCafe/
 - Responsive design for all screen sizes
 
 ### Locations
-- **Chicago** (`/locations/chicago`): Urban garden oasis menu
+- **North Park** (`/locations/chicago`): Urban garden oasis menu
 - **Evanston** (`/locations/evanston`): Outdoor dining menu
 - Interactive menu selection with item details
 - Sticky product image display

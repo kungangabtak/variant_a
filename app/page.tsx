@@ -161,7 +161,7 @@ export default function Home() {
                   bg-white text-gray-900 hover:bg-gray-100 shadow-lg hover:shadow-xl
                 "
               >
-                Order from Chicago
+                Order from North Park
               </a>
               <a 
                 href="https://pos.chowbus.com/online-ordering/store/Outdoor-Cafe-Evanston/22091"
@@ -188,13 +188,13 @@ export default function Home() {
               <SectionHeading className="mb-4 text-warm-dark">Find Us Around Town</SectionHeading>
               <div className="w-16 h-1 bg-accent-solid rounded-full mb-6"></div>
               <SectionText className="text-lg">
-                Two spots, same vibes. Whether you're in Chicago hustling or chilling in Evanston, we've got your back.
+                Two spots, same vibes. Whether you're in North Park hustling or chilling in Evanston, we've got your back.
               </SectionText>
             </div>
           </div>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 sm:gap-16 lg:gap-20">
             <div className="fade-in-left stagger-1">
-              <LocationCard href="/locations/chicago" image="/chicago.jpg" title="Chicago" />
+              <LocationCard href="/locations/chicago" image="/chicago.jpg" title="North Park" />
             </div>
             <div className="fade-in-right stagger-2">
               <LocationCard href="/locations/evanston" image="/evanston.jpg" title="Evanston" />
@@ -342,7 +342,7 @@ export default function Home() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 max-w-4xl mx-auto">
             <div className="fade-in-left stagger-1">
               <a 
-                href="https://maps.google.com/maps?q=123+Michigan+Avenue,+Chicago,+IL+60601"
+                href="https://maps.google.com/maps?q=123+Michigan+Avenue,+North+Park,+IL+60601"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group block"
@@ -353,11 +353,11 @@ export default function Home() {
                       <span className="text-3xl">📍</span>
                     </div>
                   </div>
-                  <h4 className="text-2xl sm:text-3xl font-light text-warm-dark mb-4">Chicago Location</h4>
+                  <h4 className="text-2xl sm:text-3xl font-light text-warm-dark mb-4">North Park Location</h4>
                   <div className="w-16 h-0.5 bg-accent-solid mx-auto rounded-full mb-6"></div>
                   <div className="space-y-3 text-gray-700">
                     <p className="text-lg sm:text-xl font-medium">123 Michigan Avenue</p>
-                    <p className="text-base sm:text-lg">Chicago, IL 60601</p>
+                    <p className="text-base sm:text-lg">North Park, IL 60601</p>
                     <p className="text-base sm:text-lg font-medium text-accent-solid">7:00 AM - 8:00 PM</p>
                   </div>
                   <div className="mt-6 pt-4 border-t border-accent-solid/20">
@@ -405,9 +405,9 @@ export default function Home() {
               
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
                 <div className="space-y-2">
-                  <h4 className="text-lg font-medium text-gray-900">Chicago</h4>
+                  <h4 className="text-lg font-medium text-gray-900">North Park</h4>
                   <p className="text-gray-600">📞 (312) 555-0123</p>
-                  <p className="text-gray-600">✉️ chicago@outdoorcafe.com</p>
+                  <p className="text-gray-600">✉️ northpark@outdoorcafe.com</p>
                 </div>
                 <div className="space-y-2">
                   <h4 className="text-lg font-medium text-gray-900">Evanston</h4>

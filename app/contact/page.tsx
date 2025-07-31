@@ -188,13 +188,13 @@ export default function Contact() {
                     <span className="text-3xl">📍</span>
                   </div>
                 </div>
-                <h4 className="text-2xl sm:text-3xl font-light text-warm-dark mb-4">Chicago Location</h4>
+                <h4 className="text-2xl sm:text-3xl font-light text-warm-dark mb-4">North Park Location</h4>
                 <div className="w-16 h-0.5 bg-accent-solid mx-auto rounded-full mb-6"></div>
                 
                 <div className="space-y-4 text-gray-700 mb-6">
                   <div>
                     <p className="text-lg sm:text-xl font-medium text-gray-900 mb-1">Address</p>
-                    <p className="text-base sm:text-lg">123 Michigan Avenue<br />Chicago, IL 60601</p>
+                    <p className="text-base sm:text-lg">123 Michigan Avenue<br />North Park, IL 60601</p>
                   </div>
                   
                   <div>
@@ -206,8 +206,8 @@ export default function Contact() {
                   
                   <div>
                     <p className="text-lg sm:text-xl font-medium text-gray-900 mb-1">Email</p>
-                    <a href="mailto:chicago@outdoorcafe.com" className="text-base sm:text-lg text-accent-solid hover:text-warm-dark transition-colors">
-                      chicago@outdoorcafe.com
+                    <a href="mailto:northpark@outdoorcafe.com" className="text-base sm:text-lg text-accent-solid hover:text-warm-dark transition-colors">
+                      northpark@outdoorcafe.com
                     </a>
                   </div>
                   
@@ -218,7 +218,7 @@ export default function Contact() {
                 </div>
                 
                 <a 
-                  href="https://maps.google.com/maps?q=123+Michigan+Avenue,+Chicago,+IL+60601"
+                  href="https://maps.google.com/maps?q=123+Michigan+Avenue,+North+Park,+IL+60601"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-block px-6 py-3 border-2 border-accent-solid text-accent-solid hover:bg-accent-solid hover:text-white transition-all duration-300 rounded-full font-medium"
@@ -319,7 +319,7 @@ export default function Contact() {
             Come visit us today and experience the warmth of our community.
           </SectionText>
           <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center">
-            <Button href="/locations/chicago">Visit Chicago</Button>
+            <Button href="/locations/chicago">Visit North Park</Button>
             <Button href="/locations/evanston">Visit Evanston</Button>
           </div>
         </div>

@@ -23,7 +23,7 @@ function Navbar() {
       
       {/* Center Logo */}
       <div className="flex items-center space-x-6 sm:space-x-10 lg:space-x-16">
-        <a href="/locations/chicago" className="hidden sm:block text-gray-600 hover:text-accent font-light text-base sm:text-lg lg:text-xl transition-all duration-300 hover:scale-105">Chicago</a>
+        <a href="/locations/chicago" className="hidden sm:block text-gray-600 hover:text-accent font-light text-base sm:text-lg lg:text-xl transition-all duration-300 hover:scale-105">North Park</a>
         <a href="/locations/evanston" className="hidden sm:block text-gray-600 hover:text-accent font-light text-base sm:text-lg lg:text-xl transition-all duration-300 hover:scale-105">Evanston</a>
         
         <a href="/" className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-serif font-bold text-accent tracking-tight hover:text-gray-800 transition-all duration-300 px-4 sm:px-6 hover:scale-105">
@@ -59,11 +59,11 @@ function Navbar() {
                   Home
                 </a>
                 <a 
-                  href="/locations/chicago" 
-                  className="block text-gray-600 hover:text-accent font-light text-xl transition-all duration-300 py-3 hover:translate-x-2"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  Chicago
+                                        href="/locations/chicago"
+                      className="block text-gray-600 hover:text-accent font-light text-xl transition-all duration-300 py-3 hover:translate-x-2"
+                      onClick={() => setIsMobileMenuOpen(false)}
+                    >
+                      North Park
                 </a>
                 <a 
                   href="/locations/evanston" 
