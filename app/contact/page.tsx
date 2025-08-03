@@ -194,7 +194,7 @@ export default function Contact() {
                 <div className="space-y-4 text-gray-700 mb-6">
                   <div>
                     <p className="text-lg sm:text-xl font-medium text-gray-900 mb-1">Address</p>
-                    <p className="text-base sm:text-lg">123 Michigan Avenue<br />North Park, IL 60601</p>
+                    <p className="text-base sm:text-lg">3257 W Bryn Mawr Ave<br />Chicago, IL 60659</p>
                   </div>
                   
                   <div>
@@ -213,12 +213,12 @@ export default function Contact() {
                   
                   <div>
                     <p className="text-lg sm:text-xl font-medium text-gray-900 mb-1">Hours</p>
-                    <p className="text-base sm:text-lg font-medium text-accent-solid">Monday - Sunday<br />7:00 AM - 8:00 PM</p>
+                    <p className="text-base sm:text-lg font-medium text-accent-solid">Monday - Thursday: 8:00 AM - 8:00 PM<br />Friday - Sunday: 8:00 AM - 9:00 PM</p>
                   </div>
                 </div>
                 
                 <a 
-                  href="https://maps.google.com/maps?q=123+Michigan+Avenue,+North+Park,+IL+60601"
+                  href="https://maps.google.com/maps?q=3257+W+Bryn+Mawr+Ave,+Chicago,+IL+60659"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-block px-6 py-3 border-2 border-accent-solid text-accent-solid hover:bg-accent-solid hover:text-white transition-all duration-300 rounded-full font-medium"
@@ -260,7 +260,7 @@ export default function Contact() {
                   
                   <div>
                     <p className="text-lg sm:text-xl font-medium text-gray-900 mb-1">Hours</p>
-                    <p className="text-base sm:text-lg font-medium text-accent-solid">Monday - Sunday<br />6:30 AM - 9:00 PM</p>
+                    <p className="text-base sm:text-lg font-medium text-accent-solid">Sunday - Thursday: 7:00 AM - 7:00 PM<br />Friday - Saturday: 7:00 AM - 9:00 PM</p>
                   </div>
                 </div>
                 

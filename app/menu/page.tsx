@@ -30,18 +30,17 @@ const menuItems: MenuItems = {
   ],
   bobaTea: [
     { name: "Classic Milk Tea", price: "$5.50", desc: "Traditional black tea with tapioca pearls", img: "/chai.jpg" },
-    { name: "Taro Milk Tea", price: "$5.75", desc: "Creamy taro with chewy boba", img: "/latte.jpg" },
+    { name: "Taro Milk Tea", price: "$5.75", desc: "Creamy taro with chewy boba", img: "/chai.jpg" },
     { name: "Matcha Latte", price: "$6.00", desc: "Premium matcha with milk and boba", img: "/matcha-latte.png" },
   ],
   sandwiches: [
-    { name: "Vietnamese Banh Mi", price: "$8.50", desc: "Crispy baguette with pork, pickled vegetables, and herbs", img: "/avocado-toast.jpg" },
+    { name: "Vietnamese Banh Mi", price: "$8.50", desc: "Crispy baguette with pork, pickled vegetables, and herbs", img: "/images/breakfast-burrito.jpg" },
     { name: "Grilled Chicken Banh Mi", price: "$8.75", desc: "Marinated grilled chicken with fresh cilantro", img: "/burrito.jpg" },
-    { name: "Vegetarian Banh Mi", price: "$8.00", desc: "Tofu and fresh vegetables with Vietnamese flavors", img: "/oatmeal.jpg" },
+    { name: "Vegetarian Banh Mi", price: "$8.00", desc: "Tofu and fresh vegetables with Vietnamese flavors", img: "/avocado-toast.jpg" },
   ],
 };
 
 export default function MenuPage() {
-  const [selectedItem, setSelectedItem] = useState<MenuItem | null>(null);
   const [activeCategory, setActiveCategory] = useState<keyof MenuItems>("coffee");
 
   return (
@@ -81,13 +80,14 @@ export default function MenuPage() {
             {menuItems[activeCategory].map((item) => (
               <div
                 key={item.name}
-                className="bg-white rounded-lg p-4 sm:p-6 hover:shadow-lg transition-all duration-300 cursor-pointer border border-gray-200 hover-lift"
-                onClick={() => setSelectedItem(selectedItem === item ? null : item)}
+                className="bg-white rounded-lg p-4 sm:p-6 hover:shadow-lg transition-all duration-300 border border-gray-200 hover-lift"
               >
-                <div className="h-32 sm:h-40 md:h-48 bg-gray-100 rounded-lg flex items-center justify-center mb-3 sm:mb-4">
-                  <span className="text-gray-500 font-light text-xs sm:text-sm">
-                    Photo: {item.name}
-                  </span>
+                <div className="h-48 sm:h-56 md:h-64 bg-gray-100 rounded-lg mb-3 sm:mb-4 overflow-hidden">
+                  <img
+                    src={item.img}
+                    alt={item.name}
+                    className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
+                  />
                 </div>
                 <h4 className="text-lg sm:text-xl font-light text-gray-900 mb-1 sm:mb-2">{item.name}</h4>
                 <p className="text-gray-600 text-xs sm:text-sm mb-2 sm:mb-3">{item.desc}</p>
@@ -98,29 +98,7 @@ export default function MenuPage() {
         </div>
       </section>
 
-      {/* Photo Overlay Modal */}
-      {selectedItem && (
-        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4 backdrop-blur-sm">
-          <div className="bg-white rounded-lg max-w-sm sm:max-w-md mx-auto relative p-6 sm:p-8 shadow-xl">
-            <button
-              onClick={() => setSelectedItem(null)}
-              className="absolute top-2 sm:top-4 right-2 sm:right-4 text-gray-500 hover:text-gray-700 text-xl sm:text-2xl"
-            >
-              ×
-            </button>
-            <div className="w-full h-32 sm:h-48 bg-gray-100 rounded-lg flex items-center justify-center mb-4 sm:mb-6">
-              <span className="text-gray-500 font-light text-sm sm:text-base">
-                Photo: {selectedItem.name}
-              </span>
-            </div>
-            <div className="text-center">
-              <h4 className="text-xl sm:text-2xl font-light text-gray-900 mb-2 sm:mb-3">{selectedItem.name}</h4>
-              <p className="text-gray-600 text-sm sm:text-base mb-2 sm:mb-3">{selectedItem.desc}</p>
-              <p className="text-lg sm:text-xl font-light text-gray-900">{selectedItem.price}</p>
-            </div>
-          </div>
-        </div>
-      )}
+
     </main>
   );
 } 

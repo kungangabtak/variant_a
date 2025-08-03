@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
 import Link from "next/link";
 
 type MenuItem = {
@@ -14,66 +14,80 @@ type MenuItem = {
 
 const northParkMenu: MenuItem[] = [
   {
-    id: "filter-coffee",
-    name: "Filter Coffee",
-    price: "$4.25",
-    description: "Rich, smooth coffee brewed fresh daily",
-    image: "/images/filter-coffee.jpg",
-    category: "Coffee"
-  },
-  {
-    id: "cold-brew",
-    name: "Cold Brew",
-    price: "$6.00",
-    description: "Smooth, low-acid cold brewed coffee",
-    image: "/images/cold-brew.jpg",
-    category: "Coffee"
-  },
-  {
-    id: "espresso",
-    name: "Espresso",
-    price: "$4.00",
-    description: "Single shot of our signature blend",
-    image: "/images/espresso.jpg",
-    category: "Coffee"
-  },
-  {
-    id: "latte",
-    name: "Latte",
+    id: "matcha-latte",
+    name: "Matcha Latte",
     price: "$5.50",
-    description: "Espresso with steamed milk and microfoam",
-    image: "/images/latte.jpg",
+    description: "Organic Matcha with a choice of milks and toppings",
+    image: "/menu/matcha.jpeg",
+    category: "Specialty Drinks"
+  },
+  {
+    id: "taro-latte",
+    name: "Taro Latte",
+    price: "$5.00",
+    description: "Lightly sweet taro based on your choice of milks - Caffeinated option available",
+    image: "/menu/taro.jpeg",
+    category: "Specialty Drinks"
+  },
+  {
+    id: "thai-iced-milk-tea",
+    name: "Thai Iced Milk Tea",
+    price: "$6.00",
+    description: "Sweet thai iced tea with choice of milks and toppings",
+    image: "/menu/thai-iced-milk-tea.jpeg",
+    category: "Specialty Drinks"
+  },
+  {
+    id: "hot-cocoa",
+    name: "Hot Cocoa",
+    price: "$6.00",
+    description: "Hot coco with your choice of milks",
+    image: "/menu/hot%20cocoa.jpeg",
+    category: "Specialty Drinks"
+  },
+  {
+    id: "smoothies-boba-tea",
+    name: "Smoothies/Boba Tea",
+    price: "$6.00",
+    description: "Fresh fruits, ice cream or powder base mixtures. Choose up to 2 flavors and sweetness level. Ice blended with your choice of toppings.",
+    image: "/menu/smoothies%3Aboba.jpeg",
+    category: "Tea & Boba"
+  },
+  {
+    id: "milk-tea",
+    name: "Milk Tea",
+    price: "$6.00",
+    description: "Fresh brewed tea or powder based tea with your choice of milks and toppings",
+    image: "/menu/milk%20tea.jpeg",
+    category: "Tea & Boba"
+  },
+  {
+    id: "house-blend",
+    name: "House Blend",
+    price: "$2.75",
+    description: "Dark roast mixed blend",
+    image: "/menu/house-blend.jpeg",
     category: "Coffee"
   },
   {
-    id: "avocado-toast",
-    name: "Avocado Toast",
-    price: "$12.00",
-    description: "Sourdough toast with smashed avocado, sea salt, and red pepper flakes",
-    image: "/images/avocado-toast.jpg",
+    id: "ham-pork-pate-banh-mi",
+    name: "Ham/Pork & Pate Banh Mi",
+    price: "$11.50",
+    description: "Ham & Pork roll, pate, mayo, daikon, cucumber, jalapeno and cilantro",
+    image: "/menu/ham%3Apork%20banh%20mi.jpeg",
     category: "Food"
   },
   {
-    id: "breakfast-burrito",
-    name: "Breakfast Burrito",
-    price: "$14.00",
-    description: "Scrambled eggs, cheese, and fresh salsa wrapped in a warm tortilla",
-    image: "/images/breakfast-burrito.jpg",
-    category: "Food"
-  },
-  {
-    id: "croissant",
-    name: "Croissant",
-    price: "$4.50",
-    description: "Buttery, flaky French pastry baked fresh daily",
-    image: "/images/croissant.jpg",
+    id: "shrimp-spring-roll",
+    name: "Shrimp Spring Roll",
+    price: "$7.95",
+    description: "Shrimp, lettuce, cucumber, cilantro, rice vermicelli noodles wrapped in a delicate and translucent rice paper",
+    image: "/menu/shrimp-spring-roll.jpeg",
     category: "Food"
   }
 ];
 
 export default function NorthParkMenuPage() {
-  const [selectedItem, setSelectedItem] = useState<MenuItem | null>(null);
-
   return (
     <main className="w-full min-h-screen bg-cream">
       {/* Header */}
@@ -92,7 +106,7 @@ export default function NorthParkMenuPage() {
           </p>
           <div className="mt-6">
             <p className="text-base sm:text-lg text-gray-600 font-light">
-              3257 West Bryn Mawr Avenue • North Park, IL 60659
+              3257 W Bryn Mawr Ave, Chicago, IL 60659
             </p>
           </div>
         </div>
@@ -135,7 +149,7 @@ export default function NorthParkMenuPage() {
                   Currently Open
                 </span>
                 <span>•</span>
-                <span>8:15 AM - 8:45 PM</span>
+                <span>Mon-Thu: 8AM-8PM • Fri-Sun: 8AM-9PM</span>
               </div>
             </div>
           </div>
@@ -155,106 +169,126 @@ export default function NorthParkMenuPage() {
             </p>
           </div>
           
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 sm:gap-16 lg:gap-20">
-            {/* Menu Items */}
-            <div className="space-y-8">
-              {/* Coffee Section */}
-              <div className="card-modern p-8">
-                <h3 className="text-2xl sm:text-3xl font-light text-warm-dark mb-6 pb-4 border-b border-accent-solid/20">
-                  ☕ Coffee
-                </h3>
-                <div className="space-y-4">
-                  {northParkMenu.filter(item => item.category === "Coffee").map((item) => (
-                    <div
-                      key={item.id}
-                      className={`flex justify-between items-center py-4 px-4 cursor-pointer transition-all duration-300 rounded-xl hover-gentle ${
-                        selectedItem?.id === item.id
-                          ? "bg-warm-light shadow-warm"
-                          : "hover:bg-warm-light/50"
-                      }`}
-                      onClick={() => setSelectedItem(item)}
-                    >
+          {/* Featured Menu Items */}
+          <div className="space-y-12">
+            {/* Specialty Drinks */}
+            <div>
+              <h3 className="text-2xl sm:text-3xl font-medium text-warm-dark mb-8 text-center">
+                🍵 Specialty Drinks
+              </h3>
+              <div className="grid gap-6">
+                {northParkMenu.filter(item => item.category === "Specialty Drinks").map((item) => (
+                  <div key={item.id} className="card-modern p-6 hover-lift">
+                    <div className="flex items-center justify-between gap-6">
                       <div className="flex-1">
-                        <h4 className="text-lg sm:text-xl font-light text-gray-900 mb-1">{item.name}</h4>
-                        <p className="text-gray-600 text-sm sm:text-base leading-relaxed">{item.description}</p>
+                        <div className="flex items-center justify-between mb-3">
+                          <h4 className="text-xl sm:text-2xl font-medium text-gray-900">{item.name}</h4>
+                          <span className="text-2xl font-bold text-accent-solid">{item.price}</span>
+                        </div>
+                        <p className="text-gray-600 text-base leading-relaxed">{item.description}</p>
                       </div>
-                      <span className="text-accent-solid font-medium ml-4 text-lg sm:text-xl">{item.price}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              {/* Food Section */}
-              <div className="card-modern p-8">
-                <h3 className="text-2xl sm:text-3xl font-light text-warm-dark mb-6 pb-4 border-b border-accent-solid/20">
-                  🍽️ Food
-                </h3>
-                <div className="space-y-4">
-                  {northParkMenu.filter(item => item.category === "Food").map((item) => (
-                    <div
-                      key={item.id}
-                      className={`flex justify-between items-center py-4 px-4 cursor-pointer transition-all duration-300 rounded-xl hover-gentle ${
-                        selectedItem?.id === item.id
-                          ? "bg-warm-light shadow-warm"
-                          : "hover:bg-warm-light/50"
-                      }`}
-                      onClick={() => setSelectedItem(item)}
-                    >
-                      <div className="flex-1">
-                        <h4 className="text-lg sm:text-xl font-light text-gray-900 mb-1">{item.name}</h4>
-                        <p className="text-gray-600 text-sm sm:text-base leading-relaxed">{item.description}</p>
+                      <div className="w-24 h-24 sm:w-32 sm:h-32 bg-gray-100 rounded-lg overflow-hidden flex-shrink-0">
+                        <img
+                          src={item.image}
+                          alt={item.name}
+                          className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
+                        />
                       </div>
-                      <span className="text-accent-solid font-medium ml-4 text-lg sm:text-xl">{item.price}</span>
                     </div>
-                  ))}
-                </div>
+                  </div>
+                ))}
               </div>
             </div>
 
-            {/* Product Display */}
-            <div className="lg:sticky lg:top-24">
-              {selectedItem ? (
-                <div className="card-modern p-8 hover-lift">
-                  <div className="text-center">
-                    <div className="w-full h-64 sm:h-80 lg:h-96 bg-gradient-to-br from-warm-light to-warm-dark rounded-2xl mb-6 flex items-center justify-center shadow-warm img-warm-filter">
-                      <div className="text-center">
-                        <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mb-4 mx-auto animate-float">
-                          <span className="text-2xl">
-                            {selectedItem.category === 'Coffee' ? '☕' : '🍽️'}
-                          </span>
+            {/* Tea & Boba */}
+            <div>
+              <h3 className="text-2xl sm:text-3xl font-medium text-warm-dark mb-8 text-center">
+                🧋 Tea & Boba
+              </h3>
+              <div className="grid gap-6">
+                {northParkMenu.filter(item => item.category === "Tea & Boba").map((item) => (
+                  <div key={item.id} className="card-modern p-6 hover-lift">
+                    <div className="flex items-center justify-between gap-6">
+                      <div className="flex-1">
+                        <div className="flex items-center justify-between mb-3">
+                          <h4 className="text-xl sm:text-2xl font-medium text-gray-900">{item.name}</h4>
+                          <span className="text-2xl font-bold text-accent-solid">{item.price}</span>
                         </div>
-                        <span className="text-white/80 text-lg font-light">
-                          {selectedItem.name}
-                        </span>
+                        <p className="text-gray-600 text-base leading-relaxed">{item.description}</p>
+                      </div>
+                      <div className="w-24 h-24 sm:w-32 sm:h-32 bg-gray-100 rounded-lg overflow-hidden flex-shrink-0">
+                        <img
+                          src={item.image}
+                          alt={item.name}
+                          className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
+                        />
                       </div>
                     </div>
-                    <h3 className="text-2xl sm:text-3xl font-light text-warm-dark mb-3">{selectedItem.name}</h3>
-                    <div className="w-16 h-0.5 bg-accent-solid mx-auto rounded-full mb-4"></div>
-                    <p className="text-gray-700 mb-6 text-base sm:text-lg leading-relaxed">{selectedItem.description}</p>
-                    <p className="text-2xl sm:text-3xl font-light text-accent-solid">{selectedItem.price}</p>
                   </div>
-                </div>
-              ) : (
-                <div className="card-modern p-8">
-                  <div className="text-center">
-                    <div className="w-full h-64 sm:h-80 lg:h-96 bg-gradient-to-br from-warm-light to-warm-dark rounded-2xl mb-6 flex items-center justify-center">
-                      <div className="text-center">
-                        <div className="w-20 h-20 bg-white/20 rounded-full flex items-center justify-center mb-4 mx-auto animate-pulse-warm">
-                          <span className="text-3xl">👆</span>
+                ))}
+              </div>
+            </div>
+
+            {/* Coffee */}
+            <div>
+              <h3 className="text-2xl sm:text-3xl font-medium text-warm-dark mb-8 text-center">
+                ☕ Coffee
+              </h3>
+              <div className="grid gap-6">
+                {northParkMenu.filter(item => item.category === "Coffee").map((item) => (
+                  <div key={item.id} className="card-modern p-6 hover-lift">
+                    <div className="flex items-center justify-between gap-6">
+                      <div className="flex-1">
+                        <div className="flex items-center justify-between mb-3">
+                          <h4 className="text-xl sm:text-2xl font-medium text-gray-900">{item.name}</h4>
+                          <span className="text-2xl font-bold text-accent-solid">{item.price}</span>
                         </div>
-                        <span className="text-white/80 text-lg font-light">Select an item to view</span>
+                        <p className="text-gray-600 text-base leading-relaxed">{item.description}</p>
+                      </div>
+                      <div className="w-24 h-24 sm:w-32 sm:h-32 bg-gray-100 rounded-lg overflow-hidden flex-shrink-0">
+                        <img
+                          src={item.image}
+                          alt={item.name}
+                          className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
+                        />
                       </div>
                     </div>
-                    <p className="text-gray-600 text-base sm:text-lg leading-relaxed">
-                      Click on any menu item to see its details and pricing
-                    </p>
                   </div>
-                </div>
-              )}
+                ))}
+              </div>
+            </div>
+
+            {/* Food */}
+            <div>
+              <h3 className="text-2xl sm:text-3xl font-medium text-warm-dark mb-8 text-center">
+                🍽️ Food
+              </h3>
+              <div className="grid gap-6">
+                {northParkMenu.filter(item => item.category === "Food").map((item) => (
+                  <div key={item.id} className="card-modern p-6 hover-lift">
+                    <div className="flex items-center justify-between gap-6">
+                      <div className="flex-1">
+                        <div className="flex items-center justify-between mb-3">
+                          <h4 className="text-xl sm:text-2xl font-medium text-gray-900">{item.name}</h4>
+                          <span className="text-2xl font-bold text-accent-solid">{item.price}</span>
+                        </div>
+                        <p className="text-gray-600 text-base leading-relaxed">{item.description}</p>
+                      </div>
+                      <div className="w-24 h-24 sm:w-32 sm:h-32 bg-gray-100 rounded-lg overflow-hidden flex-shrink-0">
+                        <img
+                          src={item.image}
+                          alt={item.name}
+                          className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>
       </section>
     </main>
   );
-} 
+}

@@ -138,6 +138,8 @@ export default function Home() {
             className="w-full h-full object-cover"
             loading="eager"
           />
+          {/* Dark overlay */}
+          <div className="absolute inset-0 bg-black/10"></div>
         </div>
         
         {/* Floating background elements */}
@@ -145,11 +147,25 @@ export default function Home() {
         <div className="absolute bottom-32 right-16 w-1.5 h-1.5 bg-white/30 rounded-full animate-float" style={{animationDelay: '2s'}}></div>
         <div className="absolute top-1/3 right-10 w-1 h-1 bg-white/25 rounded-full animate-float" style={{animationDelay: '4s'}}></div>
         
-        <div className="max-w-4xl mx-auto px-6 sm:px-8 text-center relative z-10">
+        <div className="max-w-6xl mx-auto px-6 sm:px-8 text-center relative z-10">
           <div className="animate-gentle">
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-light mb-12 text-white leading-tight text-shadow-warm text-balance">
-              Cozy Up in the Café
+            {/* Logo */}
+            <div className="mb-8">
+              <img 
+                src="/Logo-Flat.png" 
+                alt="Outdoor Café Logo" 
+                className="h-16 sm:h-20 md:h-24 mx-auto drop-shadow-lg"
+              />
+            </div>
+            
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-light mb-6 text-white leading-tight text-shadow-warm text-balance">
+              Your Neighborhood Cafe
             </h1>
+            
+            {/* Supportive text */}
+            <p className="text-lg sm:text-xl md:text-2xl text-white/90 font-light mb-12 max-w-4xl mx-auto leading-relaxed text-shadow-warm text-balance">
+              Cozy and comfortable, there's room for everyone at Outdoor Café
+            </p>
             <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center animate-pulse-warm">
               <a 
                 href="https://pos.chowbus.com/online-ordering/store/Outdoor-Cafe/20978"
@@ -157,8 +173,9 @@ export default function Home() {
                 rel="noopener noreferrer"
                 className="
                   inline-block px-8 sm:px-10 py-4 sm:py-5 font-medium text-base sm:text-lg 
-                  transition-all duration-300 hover:scale-105 btn-warm hover-glow rounded-full
+                  transition-all duration-300 hover:scale-105 btn-warm hover-glow !rounded-full
                   bg-white text-gray-900 hover:bg-gray-100 shadow-lg hover:shadow-xl
+                  active:!rounded-full focus:!rounded-full focus-visible:!rounded-full
                 "
               >
                 Order from North Park
@@ -169,8 +186,9 @@ export default function Home() {
                 rel="noopener noreferrer"
                 className="
                   inline-block px-8 sm:px-10 py-4 sm:py-5 font-medium text-base sm:text-lg 
-                  transition-all duration-300 hover:scale-105 btn-warm hover-glow rounded-full
+                  transition-all duration-300 hover:scale-105 btn-warm hover-glow !rounded-full
                   bg-white text-gray-900 hover:bg-gray-100 shadow-lg hover:shadow-xl
+                  active:!rounded-full focus:!rounded-full focus-visible:!rounded-full
                 "
               >
                 Order from Evanston
@@ -302,7 +320,7 @@ export default function Home() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 max-w-4xl mx-auto">
             <div className="fade-in-left stagger-1">
               <a 
-                href="https://maps.google.com/maps?q=123+Michigan+Avenue,+North+Park,+IL+60601"
+                href="https://maps.google.com/maps?q=3257+W+Bryn+Mawr+Ave,+Chicago,+IL+60659"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group block"
@@ -316,9 +334,9 @@ export default function Home() {
                   <h4 className="text-2xl sm:text-3xl font-light text-warm-dark mb-4">North Park Location</h4>
                   <div className="w-16 h-0.5 bg-accent-solid mx-auto rounded-full mb-6"></div>
                   <div className="space-y-3 text-gray-700">
-                    <p className="text-lg sm:text-xl font-medium">123 Michigan Avenue</p>
-                    <p className="text-base sm:text-lg">North Park, IL 60601</p>
-                    <p className="text-base sm:text-lg font-medium text-accent-solid">7:00 AM - 8:00 PM</p>
+                    <p className="text-lg sm:text-xl font-medium">3257 W Bryn Mawr Ave</p>
+                    <p className="text-base sm:text-lg">Chicago, IL 60659</p>
+                    <p className="text-base sm:text-lg font-medium text-accent-solid">Mon-Thu: 8AM-8PM<br />Fri-Sun: 8AM-9PM</p>
                   </div>
                   <div className="mt-6 pt-4 border-t border-accent-solid/20">
                     <p className="text-accent-solid font-medium group-hover:text-warm-dark transition-colors">
@@ -346,7 +364,7 @@ export default function Home() {
                   <div className="space-y-3 text-gray-700">
                     <p className="text-lg sm:text-xl font-medium">456 Sherman Avenue</p>
                     <p className="text-base sm:text-lg">Evanston, IL 60201</p>
-                    <p className="text-base sm:text-lg font-medium text-accent-solid">6:30 AM - 9:00 PM</p>
+                    <p className="text-base sm:text-lg font-medium text-accent-solid">Sun-Thu: 7AM-7PM<br />Fri-Sat: 7AM-9PM</p>
                   </div>
                   <div className="mt-6 pt-4 border-t border-accent-solid/20">
                     <p className="text-accent-solid font-medium group-hover:text-warm-dark transition-colors">
