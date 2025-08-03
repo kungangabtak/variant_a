@@ -102,6 +102,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <title>Outdoor Café</title>
         <meta name="description" content="Cozy outdoor café with aromatic coffee, refreshing smoothies, delicious boba tea, and flavorful Banh Mi" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" type="image/png" href="/favicon.png" />
       </head>
       <body className="bg-white text-gray-900 font-serif min-h-screen flex flex-col">
         <Navbar />
