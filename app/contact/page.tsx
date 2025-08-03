@@ -188,13 +188,13 @@ export default function Contact() {
                     <span className="text-3xl">📍</span>
                   </div>
                 </div>
-                <h4 className="text-2xl sm:text-3xl font-light text-warm-dark mb-4">Chicago Location</h4>
+                <h4 className="text-2xl sm:text-3xl font-light text-warm-dark mb-4">North Park Location</h4>
                 <div className="w-16 h-0.5 bg-accent-solid mx-auto rounded-full mb-6"></div>
                 
                 <div className="space-y-4 text-gray-700 mb-6">
                   <div>
                     <p className="text-lg sm:text-xl font-medium text-gray-900 mb-1">Address</p>
-                    <p className="text-base sm:text-lg">123 Michigan Avenue<br />Chicago, IL 60601</p>
+                    <p className="text-base sm:text-lg">3257 W Bryn Mawr Ave<br />Chicago, IL 60659</p>
                   </div>
                   
                   <div>
@@ -206,19 +206,19 @@ export default function Contact() {
                   
                   <div>
                     <p className="text-lg sm:text-xl font-medium text-gray-900 mb-1">Email</p>
-                    <a href="mailto:chicago@outdoorcafe.com" className="text-base sm:text-lg text-accent-solid hover:text-warm-dark transition-colors">
-                      chicago@outdoorcafe.com
+                    <a href="mailto:northpark@outdoorcafe.com" className="text-base sm:text-lg text-accent-solid hover:text-warm-dark transition-colors">
+                      northpark@outdoorcafe.com
                     </a>
                   </div>
                   
                   <div>
                     <p className="text-lg sm:text-xl font-medium text-gray-900 mb-1">Hours</p>
-                    <p className="text-base sm:text-lg font-medium text-accent-solid">Monday - Sunday<br />7:00 AM - 8:00 PM</p>
+                    <p className="text-base sm:text-lg font-medium text-accent-solid">Monday - Thursday: 8:00 AM - 8:00 PM<br />Friday - Sunday: 8:00 AM - 9:00 PM</p>
                   </div>
                 </div>
                 
                 <a 
-                  href="https://maps.google.com/maps?q=123+Michigan+Avenue,+Chicago,+IL+60601"
+                  href="https://maps.google.com/maps?q=3257+W+Bryn+Mawr+Ave,+Chicago,+IL+60659"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-block px-6 py-3 border-2 border-accent-solid text-accent-solid hover:bg-accent-solid hover:text-white transition-all duration-300 rounded-full font-medium"
@@ -260,7 +260,7 @@ export default function Contact() {
                   
                   <div>
                     <p className="text-lg sm:text-xl font-medium text-gray-900 mb-1">Hours</p>
-                    <p className="text-base sm:text-lg font-medium text-accent-solid">Monday - Sunday<br />6:30 AM - 9:00 PM</p>
+                    <p className="text-base sm:text-lg font-medium text-accent-solid">Sunday - Thursday: 7:00 AM - 7:00 PM<br />Friday - Saturday: 7:00 AM - 9:00 PM</p>
                   </div>
                 </div>
                 
@@ -282,26 +282,14 @@ export default function Contact() {
               <h3 className="text-2xl sm:text-3xl font-light text-warm-dark mb-6 text-center">Additional Ways to Reach Us</h3>
               <div className="w-16 h-0.5 bg-accent-solid mx-auto rounded-full mb-8"></div>
               
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div className="text-center space-y-2">
-                  <div className="w-12 h-12 bg-accent-solid/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <span className="text-2xl">🍰</span>
-                  </div>
-                  <h4 className="text-lg font-medium text-gray-900">Catering & Events</h4>
-                  <a href="mailto:catering@outdoorcafe.com" className="text-accent-solid hover:text-warm-dark transition-colors font-medium">
-                    catering@outdoorcafe.com
-                  </a>
+              <div className="text-center max-w-xs mx-auto">
+                <div className="w-12 h-12 bg-accent-solid/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <span className="text-2xl">💼</span>
                 </div>
-                
-                <div className="text-center space-y-2">
-                  <div className="w-12 h-12 bg-accent-solid/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <span className="text-2xl">💼</span>
-                  </div>
-                  <h4 className="text-lg font-medium text-gray-900">General Inquiries</h4>
-                  <a href="mailto:hello@outdoorcafe.com" className="text-accent-solid hover:text-warm-dark transition-colors font-medium">
-                    hello@outdoorcafe.com
-                  </a>
-                </div>
+                <h4 className="text-lg font-medium text-gray-900 mb-2">General Inquiries</h4>
+                <a href="mailto:hello@outdoorcafe.com" className="text-accent-solid hover:text-warm-dark transition-colors font-medium">
+                  hello@outdoorcafe.com
+                </a>
               </div>
             </div>
           </div>
@@ -319,7 +307,7 @@ export default function Contact() {
             Come visit us today and experience the warmth of our community.
           </SectionText>
           <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center">
-            <Button href="/locations/chicago">Visit Chicago</Button>
+            <Button href="/locations/chicago">Visit North Park</Button>
             <Button href="/locations/evanston">Visit Evanston</Button>
           </div>
         </div>

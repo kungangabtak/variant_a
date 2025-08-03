@@ -126,7 +126,7 @@ export default function About() {
             Come experience our carefully crafted coffee and welcoming atmosphere.
           </SectionText>
           <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center">
-            <Button href="/locations/chicago">Visit Chicago</Button>
+            <Button href="/locations/chicago">Visit North Park</Button>
             <Button href="/locations/evanston">Visit Evanston</Button>
           </div>
         </div>
