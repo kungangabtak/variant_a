@@ -23,7 +23,7 @@ const Button = ({ href, children, variant = "primary" }: { href: string; childre
       inline-block px-8 sm:px-10 py-4 sm:py-5 font-medium text-base sm:text-lg 
       transition-all duration-300 hover:scale-105 btn-warm hover-glow rounded-full
       ${variant === "primary" 
-        ? "border-2 border-accent-solid text-accent-solid hover:bg-accent hover:text-white hover:border-accent shadow-warm" 
+        ? "border-2 border-sage text-sage hover:bg-sage hover:text-white hover:border-sage shadow-warm" 
         : "border-2 border-white text-white hover:bg-white hover:text-gray-900 shadow-warm-lg"
       }
     `}
@@ -77,7 +77,7 @@ const ContactCard = ({ location, address, phone, email, hours }: {
         <div className="text-accent-solid mt-1 group-hover:scale-110 transition-transform duration-200 text-xl">📞</div>
         <div>
           <p className="text-gray-900 font-medium text-base sm:text-lg mb-1">Phone</p>
-          <p className="text-gray-600 font-light text-base sm:text-lg hover:text-accent-solid transition-colors cursor-pointer">{phone}</p>
+          <p className="text-gray-600 font-light text-base sm:text-lg hover:text-sage transition-colors cursor-pointer">{phone}</p>
         </div>
       </div>
       
@@ -85,7 +85,7 @@ const ContactCard = ({ location, address, phone, email, hours }: {
         <div className="text-accent-solid mt-1 group-hover:scale-110 transition-transform duration-200 text-xl">✉️</div>
         <div>
           <p className="text-gray-900 font-medium text-base sm:text-lg mb-1">Email</p>
-          <p className="text-gray-600 font-light text-base sm:text-lg hover:text-accent-solid transition-colors cursor-pointer">{email}</p>
+          <p className="text-gray-600 font-light text-base sm:text-lg hover:text-sage transition-colors cursor-pointer">{email}</p>
         </div>
       </div>
       
@@ -204,7 +204,7 @@ export default function Home() {
           <div className="text-left mb-12 sm:mb-16 fade-in-up">
             <div className="max-w-2xl">
               <SectionHeading className="mb-4 text-warm-dark">Find Us Around Town</SectionHeading>
-              <div className="w-16 h-1 bg-accent-solid rounded-full mb-6"></div>
+              <div className="w-16 h-1 bg-sage rounded-full mb-6"></div>
               <SectionText className="text-lg">
                 Two spots, same vibes. Whether you're in North Park hustling or chilling in Evanston, we've got your back.
               </SectionText>
@@ -229,9 +229,9 @@ export default function Home() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 sm:gap-16 lg:gap-24 items-center">
             <div className="space-y-8 sm:space-y-10 fade-in-left">
               <SectionHeading className="text-warm-dark">
-                <span className="text-green-700">SUSTAINABILITY</span>
+                <span className="text-sage">SUSTAINABILITY</span>
               </SectionHeading>
-              <div className="w-20 h-1 bg-green-600 rounded-full"></div>
+              <div className="w-20 h-1 bg-sage rounded-full"></div>
               <div className="space-y-6">
                 <SectionText className="text-xl">
                   Sustainability that's the way we roll... For the environment, for our community, for our employees, for the entire supply chain, nearly everything we serve is compostable.
@@ -240,7 +240,7 @@ export default function Home() {
                   <span className="text-3xl animate-float">♻️</span>
                   <span className="text-3xl animate-float" style={{animationDelay: '1s'}}>🌱</span>
                   <span className="text-3xl animate-float" style={{animationDelay: '2s'}}>🌍</span>
-                  <span className="font-medium text-green-700 text-lg">Compostable packaging</span>
+                  <span className="font-medium text-sage text-lg">Compostable packaging</span>
                 </div>
                 <SectionText>
                   We proud to offer our employees a living wage, and good benefits too. That's the essence of Specialty coffee... from seed to cup, the entire supply chain, and why we believe is thrival for all.
@@ -255,7 +255,7 @@ export default function Home() {
                   alt="Sustainable Coffee" 
                   className="w-full h-80 sm:h-96 lg:h-[500px] object-cover transition-transform duration-500 hover:scale-105 img-warm-filter"
                 />
-                <div className="absolute top-6 right-6 w-3 h-3 bg-green-400/60 rounded-full animate-float"></div>
+                <div className="absolute top-6 right-6 w-3 h-3 bg-sage/60 rounded-full animate-float"></div>
               </div>
             </div>
           </div>
@@ -285,7 +285,7 @@ export default function Home() {
                 <h3 className="text-2xl sm:text-3xl lg:text-4xl font-light text-gray-900 leading-tight">
                   This is where the magic happens ✨
                 </h3>
-                <div className="w-20 h-1 bg-accent-solid rounded-full"></div>
+                <div className="w-20 h-1 bg-sage rounded-full"></div>
                 <div className="space-y-4 text-gray-700 leading-relaxed">
                   <p className="text-lg sm:text-xl font-medium text-accent-solid">
                     Real talk: we're basically your neighborhood hangout that happens to serve really good food.
@@ -311,7 +311,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-6 sm:px-8">
           <div className="text-center mb-16 sm:mb-20 fade-in-up">
             <SectionHeading className="mb-6 text-warm-dark">Find Us</SectionHeading>
-            <div className="w-24 h-1 bg-accent-solid mx-auto rounded-full mb-8"></div>
+            <div className="w-24 h-1 bg-sage mx-auto rounded-full mb-8"></div>
             <SectionText className="max-w-4xl mx-auto text-xl">
               Visit us at either of our beautiful locations. Tap to open directions in Google Maps and find us easily.
             </SectionText>
@@ -327,7 +327,7 @@ export default function Home() {
               >
                 <div className="card-modern p-8 sm:p-10 hover-lift text-center">
                   <div className="flex justify-center mb-6">
-                    <div className="w-16 h-16 bg-accent-solid/10 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300 animate-pulse-warm">
+                    <div className="w-16 h-16 bg-sage/10 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300 animate-pulse-warm">
                       <span className="text-3xl">📍</span>
                     </div>
                   </div>
@@ -338,7 +338,7 @@ export default function Home() {
                     <p className="text-base sm:text-lg">Chicago, IL 60659</p>
                     <p className="text-base sm:text-lg font-medium text-accent-solid">Mon-Thu: 8AM-8PM<br />Fri-Sun: 8AM-9PM</p>
                   </div>
-                  <div className="mt-6 pt-4 border-t border-accent-solid/20">
+                  <div className="mt-6 pt-4 border-t border-sage/20">
                     <p className="text-accent-solid font-medium group-hover:text-warm-dark transition-colors">
                       Open in Google Maps →
                     </p>
@@ -355,7 +355,7 @@ export default function Home() {
               >
                 <div className="card-modern p-8 sm:p-10 hover-lift text-center">
                   <div className="flex justify-center mb-6">
-                    <div className="w-16 h-16 bg-accent-solid/10 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300 animate-pulse-warm">
+                    <div className="w-16 h-16 bg-sage/10 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300 animate-pulse-warm">
                       <span className="text-3xl">📍</span>
                     </div>
                   </div>
@@ -366,7 +366,7 @@ export default function Home() {
                     <p className="text-base sm:text-lg">Evanston, IL 60201</p>
                     <p className="text-base sm:text-lg font-medium text-accent-solid">Sun-Thu: 7AM-7PM<br />Fri-Sat: 7AM-9PM</p>
                   </div>
-                  <div className="mt-6 pt-4 border-t border-accent-solid/20">
+                  <div className="mt-6 pt-4 border-t border-sage/20">
                     <p className="text-accent-solid font-medium group-hover:text-warm-dark transition-colors">
                       Open in Google Maps →
                     </p>
@@ -376,68 +376,11 @@ export default function Home() {
             </div>
           </div>
           
-          <div className="text-center mt-16 sm:mt-20 fade-in-up stagger-3">
-            <div className="card-modern max-w-4xl mx-auto p-8 sm:p-10">
-              <h3 className="text-2xl sm:text-3xl font-light text-warm-dark mb-6">Get in Touch</h3>
-              <div className="w-16 h-0.5 bg-accent-solid mx-auto rounded-full mb-8"></div>
-              
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
-                <div className="space-y-2">
-                  <h4 className="text-lg font-medium text-gray-900">North Park</h4>
-                  <p className="text-gray-600">📞 (312) 555-0123</p>
-                  <p className="text-gray-600">✉️ northpark@outdoorcafe.com</p>
-                </div>
-                <div className="space-y-2">
-                  <h4 className="text-lg font-medium text-gray-900">Evanston</h4>
-                  <p className="text-gray-600">📞 (847) 555-0456</p>
-                  <p className="text-gray-600">✉️ evanston@outdoorcafe.com</p>
-                </div>
-              </div>
-              
-
-            </div>
-          </div>
+          {/* Home page Get in Touch section removed per request */}
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="bg-gray-900 text-white py-12 sm:py-16">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 sm:gap-12 mb-8 sm:mb-12">
-            <div className="space-y-3">
-              <h4 className="text-xs sm:text-sm font-medium text-accent uppercase tracking-wide">Get in Touch</h4>
-              <div className="space-y-2 text-gray-300 font-light">
-                <p>123 Main Street</p>
-                <p>City, State</p>
-                <p className="hover:text-accent transition-colors">hello@outdoorcafe.com</p>
-              </div>
-            </div>
-            <div>
-              <h4 className="text-xs sm:text-sm font-medium text-accent uppercase tracking-wide mb-3 sm:mb-4">Hours</h4>
-              <table className="w-full">
-                <tbody>
-                  <tr>
-                    <td className="py-1 text-gray-300 font-light text-sm sm:text-base">Every Day</td>
-                    <td className="py-1 text-gray-300 font-light text-right text-sm sm:text-base">8am–6pm</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-            <div>
-              <h4 className="text-xs sm:text-sm font-medium text-accent uppercase tracking-wide mb-3 sm:mb-4">Navigation</h4>
-              <div className="space-y-2">
-                <Link href="/" className="block text-gray-300 font-light hover:text-white transition-colors text-sm sm:text-base">Home</Link>
-                <Link href="/locations" className="block text-gray-300 font-light hover:text-white transition-colors text-sm sm:text-base">Locations</Link>
-                <Link href="/menu" className="block text-gray-300 font-light hover:text-white transition-colors text-sm sm:text-base">Menu</Link>
-              </div>
-            </div>
-          </div>
-          
-          <div className="pt-6 sm:pt-8 border-t border-gray-800 text-center">
-            <p className="text-gray-400 text-xs sm:text-sm">© 2024 Outdoor Café</p>
-          </div>
-        </div>
-      </footer>
+      {/* Footer removed; now rendered globally in RootLayout */}
     </main>
   );
 } 

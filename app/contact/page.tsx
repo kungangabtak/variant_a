@@ -23,7 +23,7 @@ const Button = ({ href, children, variant = "primary" }: { href: string; childre
       inline-block px-8 sm:px-10 py-4 sm:py-5 font-medium text-base sm:text-lg 
       transition-all duration-300 hover:scale-105 btn-warm hover-glow rounded-full
       ${variant === "primary" 
-        ? "border-2 border-accent-solid text-accent-solid hover:bg-accent hover:text-white hover:border-accent shadow-warm" 
+        ? "border-2 border-sage text-sage hover:bg-sage hover:text-white hover:border-sage shadow-warm" 
         : "border-2 border-white text-white hover:bg-white hover:text-gray-900 shadow-warm-lg"
       }
     `}
@@ -94,7 +94,7 @@ export default function Contact() {
         <div className="max-w-4xl mx-auto px-6 sm:px-8">
           <div className="text-center mb-12 sm:mb-16 fade-in-up">
             <SectionHeading className="mb-6 text-warm-dark">Let's Connect</SectionHeading>
-            <div className="w-24 h-1 bg-accent-solid mx-auto rounded-full mb-8"></div>
+            <div className="w-24 h-1 bg-sage mx-auto rounded-full mb-8"></div>
             <SectionText className="max-w-3xl mx-auto text-xl">
               We'd love to hear from you! Contact us with any questions, feedback, or just to say hello.
             </SectionText>
@@ -112,7 +112,7 @@ export default function Contact() {
                     id="firstName"
                     name="firstName"
                     required
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent-solid focus:border-accent-solid transition-colors bg-white text-gray-900"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-sage focus:border-sage transition-colors bg-white text-gray-900"
                   />
                 </div>
                 
@@ -125,7 +125,7 @@ export default function Contact() {
                     id="lastName"
                     name="lastName"
                     required
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent-solid focus:border-accent-solid transition-colors bg-white text-gray-900"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-sage focus:border-sage transition-colors bg-white text-gray-900"
                   />
                 </div>
               </div>
@@ -139,7 +139,7 @@ export default function Contact() {
                   id="email"
                   name="email"
                   required
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent-solid focus:border-accent-solid transition-colors bg-white text-gray-900"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-sage focus:border-sage transition-colors bg-white text-gray-900"
                 />
               </div>
               
@@ -151,7 +151,7 @@ export default function Contact() {
                   id="message"
                   name="message"
                   rows={5}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent-solid focus:border-accent-solid transition-colors bg-white text-gray-900 resize-vertical"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-sage focus:border-sage transition-colors bg-white text-gray-900 resize-vertical"
                   placeholder="Tell us what's on your mind..."
                 ></textarea>
               </div>
@@ -174,7 +174,7 @@ export default function Contact() {
         <div className="max-w-6xl mx-auto px-6 sm:px-8">
           <div className="text-center mb-16 sm:mb-20 fade-in-up">
             <SectionHeading className="mb-6 text-warm-dark">Find Us</SectionHeading>
-            <div className="w-24 h-1 bg-accent-solid mx-auto rounded-full mb-8"></div>
+            <div className="w-24 h-1 bg-sage mx-auto rounded-full mb-8"></div>
             <SectionText className="max-w-3xl mx-auto text-xl">
               Visit us at either of our beautiful locations or get in touch for any questions.
             </SectionText>
@@ -184,12 +184,12 @@ export default function Contact() {
             <div className="fade-in-left stagger-1">
               <div className="card-modern p-8 sm:p-10 text-center h-full">
                 <div className="flex justify-center mb-6">
-                  <div className="w-16 h-16 bg-accent-solid/10 rounded-full flex items-center justify-center animate-pulse-warm">
+                  <div className="w-16 h-16 bg-sage/10 rounded-full flex items-center justify-center animate-pulse-warm">
                     <span className="text-3xl">📍</span>
                   </div>
                 </div>
                 <h4 className="text-2xl sm:text-3xl font-light text-warm-dark mb-4">North Park Location</h4>
-                <div className="w-16 h-0.5 bg-accent-solid mx-auto rounded-full mb-6"></div>
+                <div className="w-16 h-0.5 bg-sage mx-auto rounded-full mb-6"></div>
                 
                 <div className="space-y-4 text-gray-700 mb-6">
                   <div>
@@ -199,21 +199,16 @@ export default function Contact() {
                   
                   <div>
                     <p className="text-lg sm:text-xl font-medium text-gray-900 mb-1">Phone</p>
-                    <a href="tel:+13125550123" className="text-base sm:text-lg text-accent-solid hover:text-warm-dark transition-colors">
-                      (312) 555-0123
+                    <a href="tel:+17735396078" className="text-base sm:text-lg text-gray-900 hover:text-sage transition-colors" aria-label="Call North Park at 773 539 6078">
+                      (773) 539-6078
                     </a>
                   </div>
                   
-                  <div>
-                    <p className="text-lg sm:text-xl font-medium text-gray-900 mb-1">Email</p>
-                    <a href="mailto:northpark@outdoorcafe.com" className="text-base sm:text-lg text-accent-solid hover:text-warm-dark transition-colors">
-                      northpark@outdoorcafe.com
-                    </a>
-                  </div>
+                  
                   
                   <div>
                     <p className="text-lg sm:text-xl font-medium text-gray-900 mb-1">Hours</p>
-                    <p className="text-base sm:text-lg font-medium text-accent-solid">Monday - Thursday: 8:00 AM - 8:00 PM<br />Friday - Sunday: 8:00 AM - 9:00 PM</p>
+                    <p className="text-base sm:text-lg font-medium text-sage">Monday - Thursday: 8:00 AM - 8:00 PM<br />Friday - Sunday: 8:00 AM - 9:00 PM</p>
                   </div>
                 </div>
                 
@@ -221,7 +216,7 @@ export default function Contact() {
                   href="https://maps.google.com/maps?q=3257+W+Bryn+Mawr+Ave,+Chicago,+IL+60659"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-block px-6 py-3 border-2 border-accent-solid text-accent-solid hover:bg-accent-solid hover:text-white transition-all duration-300 rounded-full font-medium"
+                  className="inline-block px-6 py-3 border-2 border-sage text-sage hover:bg-sage hover:text-white transition-all duration-300 rounded-full font-medium"
                 >
                   Get Directions
                 </a>
@@ -231,12 +226,12 @@ export default function Contact() {
             <div className="fade-in-right stagger-2">
               <div className="card-modern p-8 sm:p-10 text-center h-full">
                 <div className="flex justify-center mb-6">
-                  <div className="w-16 h-16 bg-accent-solid/10 rounded-full flex items-center justify-center animate-pulse-warm">
+                  <div className="w-16 h-16 bg-sage/10 rounded-full flex items-center justify-center animate-pulse-warm">
                     <span className="text-3xl">📍</span>
                   </div>
                 </div>
                 <h4 className="text-2xl sm:text-3xl font-light text-warm-dark mb-4">Evanston Location</h4>
-                <div className="w-16 h-0.5 bg-accent-solid mx-auto rounded-full mb-6"></div>
+                <div className="w-16 h-0.5 bg-sage mx-auto rounded-full mb-6"></div>
                 
                 <div className="space-y-4 text-gray-700 mb-6">
                   <div>
@@ -246,21 +241,16 @@ export default function Contact() {
                   
                   <div>
                     <p className="text-lg sm:text-xl font-medium text-gray-900 mb-1">Phone</p>
-                    <a href="tel:+18475550456" className="text-base sm:text-lg text-accent-solid hover:text-warm-dark transition-colors">
-                      (847) 555-0456
+                    <a href="tel:+18474250022" className="text-base sm:text-lg text-gray-900 hover:text-sage transition-colors" aria-label="Call Evanston at 847 425 0022">
+                      (847) 425-0022
                     </a>
                   </div>
                   
-                  <div>
-                    <p className="text-lg sm:text-xl font-medium text-gray-900 mb-1">Email</p>
-                    <a href="mailto:evanston@outdoorcafe.com" className="text-base sm:text-lg text-accent-solid hover:text-warm-dark transition-colors">
-                      evanston@outdoorcafe.com
-                    </a>
-                  </div>
+                  
                   
                   <div>
                     <p className="text-lg sm:text-xl font-medium text-gray-900 mb-1">Hours</p>
-                    <p className="text-base sm:text-lg font-medium text-accent-solid">Sunday - Thursday: 7:00 AM - 7:00 PM<br />Friday - Saturday: 7:00 AM - 9:00 PM</p>
+                    <p className="text-base sm:text-lg font-medium text-sage">Sunday - Thursday: 7:00 AM - 7:00 PM<br />Friday - Saturday: 7:00 AM - 9:00 PM</p>
                   </div>
                 </div>
                 
@@ -268,7 +258,7 @@ export default function Contact() {
                   href="https://maps.google.com/maps?q=456+Sherman+Avenue,+Evanston,+IL+60201"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-block px-6 py-3 border-2 border-accent-solid text-accent-solid hover:bg-accent-solid hover:text-white transition-all duration-300 rounded-full font-medium"
+                  className="inline-block px-6 py-3 border-2 border-sage text-sage hover:bg-sage hover:text-white transition-all duration-300 rounded-full font-medium"
                 >
                   Get Directions
                 </a>
@@ -276,23 +266,7 @@ export default function Contact() {
             </div>
           </div>
           
-          {/* Additional Contact Information */}
-          <div className="mt-16 sm:mt-20 fade-in-up">
-            <div className="card-modern max-w-4xl mx-auto p-8 sm:p-10">
-              <h3 className="text-2xl sm:text-3xl font-light text-warm-dark mb-6 text-center">Additional Ways to Reach Us</h3>
-              <div className="w-16 h-0.5 bg-accent-solid mx-auto rounded-full mb-8"></div>
-              
-              <div className="text-center max-w-xs mx-auto">
-                <div className="w-12 h-12 bg-accent-solid/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span className="text-2xl">💼</span>
-                </div>
-                <h4 className="text-lg font-medium text-gray-900 mb-2">General Inquiries</h4>
-                <a href="mailto:hello@outdoorcafe.com" className="text-accent-solid hover:text-warm-dark transition-colors font-medium">
-                  hello@outdoorcafe.com
-                </a>
-              </div>
-            </div>
-          </div>
+          {/* Additional Contact Information removed per request */}
         </div>
       </section>
 
@@ -302,7 +276,7 @@ export default function Contact() {
           <SectionHeading className="mb-8 text-warm-dark">
             Ready for Great <span className="text-accent-solid">COFFEE?</span>
           </SectionHeading>
-          <div className="w-24 h-1 bg-accent-solid mx-auto rounded-full mb-8"></div>
+          <div className="w-24 h-1 bg-sage mx-auto rounded-full mb-8"></div>
           <SectionText className="mb-12 text-xl">
             Come visit us today and experience the warmth of our community.
           </SectionText>

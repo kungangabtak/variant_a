@@ -1,7 +1,8 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import Link from "next/link";
+import GoogleReviewsMarquee from "../../components/GoogleReviewsMarquee";
 
 type MenuItem = {
   id: string;
@@ -88,6 +89,13 @@ const northParkMenu: MenuItem[] = [
 ];
 
 export default function NorthParkMenuPage() {
+  const categories = [
+    { id: "Specialty Drinks", label: "Specialty Drinks", emoji: "🍵" },
+    { id: "Tea & Boba", label: "Tea & Boba", emoji: "🧋" },
+    { id: "Coffee", label: "Coffee", emoji: "☕" },
+    { id: "Food", label: "Food", emoji: "🍽️" },
+  ];
+  const [activeCategory, setActiveCategory] = useState<string>(categories[0].id);
   return (
     <main className="w-full min-h-screen bg-cream">
       {/* Header */}
@@ -100,7 +108,7 @@ export default function NorthParkMenuPage() {
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-light mb-6 text-warm-dark leading-tight text-balance">
             North Park Location
           </h1>
-          <div className="w-24 h-1 bg-accent-solid mx-auto rounded-full mb-6"></div>
+          <div className="w-24 h-1 bg-sage mx-auto rounded-full mb-6"></div>
           <p className="text-xl sm:text-2xl text-gray-700 font-light max-w-3xl mx-auto leading-relaxed-plus text-balance">
             Urban garden oasis in the heart of the city
           </p>
@@ -118,7 +126,7 @@ export default function NorthParkMenuPage() {
           <div className="card-modern p-8 sm:p-12 hover-glow">
             <div className="space-y-6">
               <div className="flex justify-center">
-                <div className="w-16 h-16 bg-accent-solid/10 rounded-full flex items-center justify-center animate-pulse-warm">
+                <div className="w-16 h-16 bg-sage/10 rounded-full flex items-center justify-center animate-pulse-warm">
                   <span className="text-2xl">🛒</span>
                 </div>
               </div>
@@ -145,7 +153,7 @@ export default function NorthParkMenuPage() {
               </div>
               <div className="flex items-center justify-center space-x-4 text-sm text-gray-600 pt-2">
                 <span className="flex items-center">
-                  <span className="w-2 h-2 bg-green-500 rounded-full mr-2"></span>
+                  <span className="w-2 h-2 bg-sage rounded-full mr-2"></span>
                   Currently Open
                 </span>
                 <span>•</span>
@@ -159,133 +167,88 @@ export default function NorthParkMenuPage() {
       {/* Menu Section */}
       <section className="py-16 sm:py-20 bg-warm-light">
         <div className="max-w-7xl mx-auto px-6 sm:px-8">
-          <div className="text-center mb-12 sm:mb-16">
+          <div className="text-center mb-6 sm:mb-8">
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-light mb-6 text-warm-dark text-balance">
               Featured Menu Items
             </h2>
-            <div className="w-20 h-1 bg-accent-solid mx-auto rounded-full mb-6"></div>
+            <div className="w-20 h-1 bg-sage mx-auto rounded-full mb-6"></div>
             <p className="text-lg sm:text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed-plus text-balance">
               A curated selection of our most popular drinks and dishes. View our complete menu and place orders online.
             </p>
           </div>
+          {/* Sticky tab navigation */}
+          <div className="sticky top-16 z-10 -mx-6 sm:-mx-8 px-6 sm:px-8 py-3 bg-white/85 backdrop-blur-enhanced shadow-warm border-b border-gray-200 mb-10">
+            <nav role="tablist" aria-label="Menu categories" className="flex flex-wrap items-center justify-center gap-2 sm:gap-3">
+              {categories.map((cat) => (
+                <button
+                  key={cat.id}
+                  role="tab"
+                  aria-selected={activeCategory === cat.id}
+                  onClick={() => setActiveCategory(cat.id)}
+                  className={`${activeCategory === cat.id
+                    ? "bg-sage text-white border-sage shadow"
+                    : "bg-white text-gray-700 border-gray-300 hover:border-sage hover:text-sage"} inline-flex items-center gap-2 px-4 py-2 rounded-full border transition-colors`}
+                >
+                  <span className="hidden sm:inline">{cat.emoji}</span>
+                  <span className="font-medium text-sm sm:text-base">{cat.label}</span>
+                </button>
+              ))}
+            </nav>
+          </div>
           
-          {/* Featured Menu Items */}
-          <div className="space-y-12">
-            {/* Specialty Drinks */}
-            <div>
-              <h3 className="text-2xl sm:text-3xl font-medium text-warm-dark mb-8 text-center">
-                🍵 Specialty Drinks
-              </h3>
-              <div className="grid gap-6">
-                {northParkMenu.filter(item => item.category === "Specialty Drinks").map((item) => (
-                  <div key={item.id} className="card-modern p-6 hover-lift">
-                    <div className="flex items-center justify-between gap-6">
-                      <div className="flex-1">
-                        <div className="flex items-center justify-between mb-3">
-                          <h4 className="text-xl sm:text-2xl font-medium text-gray-900">{item.name}</h4>
-                          <span className="text-2xl font-bold text-accent-solid">{item.price}</span>
-                        </div>
-                        <p className="text-gray-600 text-base leading-relaxed">{item.description}</p>
+          {/* Tabbed Menu Items */}
+          <div>
+            <h3 className="text-2xl sm:text-3xl font-medium text-warm-dark mb-8 text-center">
+              <span className="mr-2">{categories.find(c => c.id === activeCategory)?.emoji}</span>
+              {activeCategory}
+            </h3>
+            <div className="grid gap-6">
+              {northParkMenu.filter(item => item.category === activeCategory).map((item) => (
+                <div key={item.id} className="card-modern p-5 sm:p-6 hover-lift hover:bg-sage/5 ring-1 ring-transparent hover:ring-sage/20 transition-colors">
+                  <div className="flex items-center gap-5 sm:gap-6">
+                    <div className="w-28 h-28 sm:w-36 sm:h-36 md:w-40 md:h-40 bg-gray-100 rounded-xl overflow-hidden flex-shrink-0">
+                      <img src={item.image} alt={item.name} className="w-full h-full object-cover transition-transform duration-300 hover:scale-105" />
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <div className="flex items-start justify-between gap-3 mb-2">
+                        <h4 className="text-xl sm:text-2xl font-semibold text-gray-900 truncate">{item.name}</h4>
+                        <span className="inline-flex items-center px-3 py-1 rounded-full border border-sage/30 bg-sage/5 text-sage text-sm whitespace-nowrap">{item.price}</span>
                       </div>
-                      <div className="w-24 h-24 sm:w-32 sm:h-32 bg-gray-100 rounded-lg overflow-hidden flex-shrink-0">
-                        <img
-                          src={item.image}
-                          alt={item.name}
-                          className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
-                        />
-                      </div>
+                      <p className="text-gray-500 text-sm sm:text-base leading-relaxed clamp-2">{item.description}</p>
                     </div>
                   </div>
-                ))}
-              </div>
+                </div>
+              ))}
             </div>
+          </div>
+        </div>
+      </section>
 
-            {/* Tea & Boba */}
-            <div>
-              <h3 className="text-2xl sm:text-3xl font-medium text-warm-dark mb-8 text-center">
-                🧋 Tea & Boba
-              </h3>
-              <div className="grid gap-6">
-                {northParkMenu.filter(item => item.category === "Tea & Boba").map((item) => (
-                  <div key={item.id} className="card-modern p-6 hover-lift">
-                    <div className="flex items-center justify-between gap-6">
-                      <div className="flex-1">
-                        <div className="flex items-center justify-between mb-3">
-                          <h4 className="text-xl sm:text-2xl font-medium text-gray-900">{item.name}</h4>
-                          <span className="text-2xl font-bold text-accent-solid">{item.price}</span>
-                        </div>
-                        <p className="text-gray-600 text-base leading-relaxed">{item.description}</p>
-                      </div>
-                      <div className="w-24 h-24 sm:w-32 sm:h-32 bg-gray-100 rounded-lg overflow-hidden flex-shrink-0">
-                        <img
-                          src={item.image}
-                          alt={item.name}
-                          className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Coffee */}
-            <div>
-              <h3 className="text-2xl sm:text-3xl font-medium text-warm-dark mb-8 text-center">
-                ☕ Coffee
-              </h3>
-              <div className="grid gap-6">
-                {northParkMenu.filter(item => item.category === "Coffee").map((item) => (
-                  <div key={item.id} className="card-modern p-6 hover-lift">
-                    <div className="flex items-center justify-between gap-6">
-                      <div className="flex-1">
-                        <div className="flex items-center justify-between mb-3">
-                          <h4 className="text-xl sm:text-2xl font-medium text-gray-900">{item.name}</h4>
-                          <span className="text-2xl font-bold text-accent-solid">{item.price}</span>
-                        </div>
-                        <p className="text-gray-600 text-base leading-relaxed">{item.description}</p>
-                      </div>
-                      <div className="w-24 h-24 sm:w-32 sm:h-32 bg-gray-100 rounded-lg overflow-hidden flex-shrink-0">
-                        <img
-                          src={item.image}
-                          alt={item.name}
-                          className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Food */}
-            <div>
-              <h3 className="text-2xl sm:text-3xl font-medium text-warm-dark mb-8 text-center">
-                🍽️ Food
-              </h3>
-              <div className="grid gap-6">
-                {northParkMenu.filter(item => item.category === "Food").map((item) => (
-                  <div key={item.id} className="card-modern p-6 hover-lift">
-                    <div className="flex items-center justify-between gap-6">
-                      <div className="flex-1">
-                        <div className="flex items-center justify-between mb-3">
-                          <h4 className="text-xl sm:text-2xl font-medium text-gray-900">{item.name}</h4>
-                          <span className="text-2xl font-bold text-accent-solid">{item.price}</span>
-                        </div>
-                        <p className="text-gray-600 text-base leading-relaxed">{item.description}</p>
-                      </div>
-                      <div className="w-24 h-24 sm:w-32 sm:h-32 bg-gray-100 rounded-lg overflow-hidden flex-shrink-0">
-                        <img
-                          src={item.image}
-                          alt={item.name}
-                          className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
+      {/* Google Reviews Section */}
+      <section className="py-16 sm:py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-6 sm:px-8">
+          <div className="text-center mb-6 sm:mb-8">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-light mb-6 text-warm-dark text-balance">
+              What people are saying
+            </h2>
+            <div className="w-20 h-1 bg-sage mx-auto rounded-full mb-6"></div>
+            <p className="text-lg sm:text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed-plus text-balance">
+              Browse Google reviews for our North Park location.
+            </p>
+          </div>
+          <GoogleReviewsMarquee
+            placeQuery="3257 W Bryn Mawr Ave, Chicago, IL 60659"
+            reviewsUrl="https://maps.app.goo.gl/KokLqXZ9fW5ccEAk8"
+          />
+          <div className="text-center mt-8">
+            <a
+              href="https://maps.app.goo.gl/KokLqXZ9fW5ccEAk8"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block px-8 py-4 rounded-full bg-sage text-white hover:bg-warm-dark transition-colors btn-warm"
+            >
+              Read all reviews on Google
+            </a>
           </div>
         </div>
       </section>

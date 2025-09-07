@@ -16,6 +16,8 @@ module.exports = {
         'warm-solid': '#F5E9DA',
         'warm-light-bg': '#FAF3EA',
         'warm-dark-bg': '#E8D5C4',
+        // New sage green highlight accent
+        sage: '#418B26',
       },
       fontFamily: {
         serif: ['Merriweather', 'serif'],

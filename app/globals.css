@@ -11,6 +11,16 @@ body {
   @apply bg-white text-gray-900 font-serif;
 }
 
+/* Global sage highlight selection */
+::selection {
+  background: #418B26;
+  color: #ffffff;
+}
+::-moz-selection {
+  background: #418B26;
+  color: #ffffff;
+}
+
 /* Enhanced warm color palette */
 .bg-warm-solid {
   background-color: #F5E9DA;
@@ -177,7 +187,7 @@ body {
   inset: 0;
   border-radius: inherit;
   padding: 2px;
-  background: linear-gradient(135deg, rgba(166, 124, 82, 0.2), rgba(196, 153, 107, 0.2));
+  background: linear-gradient(135deg, rgba(166, 124, 82, 0.2), rgba(65, 139, 38, 0.2));
   mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   mask-composite: xor;
   opacity: 0;
@@ -211,7 +221,7 @@ body {
 
 /* Improved focus states */
 button:focus, a:focus {
-  outline: 3px solid rgba(166, 124, 82, 0.5);
+  outline: 3px solid rgba(65, 139, 38, 0.5);
   outline-offset: 2px;
   border-radius: 6px;
 }
@@ -352,6 +362,14 @@ html, body {
   line-height: 1.75;
 }
 
+/* Line clamp helpers */
+.clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
 /* Modern card styles */
 .card-modern {
   @apply bg-white rounded-2xl shadow-warm hover:shadow-warm-lg;
@@ -363,3 +381,38 @@ html, body {
   transform: translateY(-4px);
   border-color: rgba(166, 124, 82, 0.2);
 } 
+
+/* Reviews marquee animation */
+@keyframes marqueeLeftToRight {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+.reviews-marquee {
+  position: relative;
+  overflow: hidden;
+}
+
+.reviews-track {
+  display: flex;
+  gap: 1rem;
+  width: max-content;
+  will-change: transform;
+  animation: marqueeLeftToRight 45s linear infinite;
+}
+
+.reviews-card {
+  min-width: 280px;
+}
+
+/* Clamp utility for review text */
+.line-clamp-4 {
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
