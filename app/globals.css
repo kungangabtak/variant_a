@@ -362,4 +362,15 @@ html, body {
 .card-modern:hover {
   transform: translateY(-4px);
   border-color: rgba(166, 124, 82, 0.2);
+}
+
+/* Instagram Carousel Custom Styles */
+.instagram-embed-custom {
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+.instagram-embed-custom iframe {
+  border-radius: 1rem !important;
+  border: 1px solid rgba(166, 124, 82, 0.1) !important;
 } 
