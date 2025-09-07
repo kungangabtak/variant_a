@@ -23,7 +23,7 @@ const Button = ({ href, children, variant = "primary" }: { href: string; childre
       inline-block px-8 sm:px-10 py-4 sm:py-5 font-medium text-base sm:text-lg 
       transition-all duration-300 hover:scale-105 btn-warm hover-glow rounded-full
       ${variant === "primary" 
-        ? "border-2 border-accent-solid text-accent-solid hover:bg-accent hover:text-white hover:border-accent shadow-warm" 
+        ? "border-2 border-sage text-sage hover:bg-sage hover:text-white hover:border-sage shadow-warm" 
         : "border-2 border-white text-white hover:bg-white hover:text-gray-900 shadow-warm-lg"
       }
     `}

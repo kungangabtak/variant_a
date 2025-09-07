@@ -63,8 +63,8 @@ export default function MenuPage() {
                 onClick={() => setActiveCategory(category as keyof MenuItems)}
                 className={`px-4 sm:px-6 py-2 sm:py-3 border-b-2 text-sm sm:text-base transition-all duration-300 font-light ${
                   activeCategory === category
-                    ? "border-accent text-accent"
-                    : "border-transparent text-gray-600 hover:text-accent hover:border-gray-300"
+                    ? "border-sage text-sage"
+                    : "border-transparent text-gray-600 hover:text-sage hover:border-gray-300"
                 }`}
               >
                 {category === 'bobaTea' ? 'Boba Tea' : 
