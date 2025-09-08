@@ -46,7 +46,6 @@ function Navbar() {
             </svg>
           </button>
         </div>
-        <a href="/menu" className="hidden lg:block text-gray-800 hover:text-sage font-medium text-base sm:text-lg lg:text-xl transition-all duration-300 hover:scale-105">Menu</a>
         <a href="/locations/chicago" className="hidden lg:block text-gray-800 hover:text-sage font-medium text-base sm:text-lg lg:text-xl transition-all duration-300 hover:scale-105">North Park</a>
         <a href="/locations/evanston" className="hidden lg:block text-gray-800 hover:text-sage font-medium text-base sm:text-lg lg:text-xl transition-all duration-300 hover:scale-105">Evanston</a>
       </div>
@@ -103,13 +102,6 @@ function Navbar() {
                   onClick={closeMenu}
                 >
                   Home
-                </a>
-                <a
-                  href="/menu"
-                  className="block rounded-lg px-4 py-3 text-lg text-gray-900 hover:bg-gray-100 transition-colors font-medium"
-                  onClick={closeMenu}
-                >
-                  Menu
                 </a>
                 <a
                   href="/locations/chicago"

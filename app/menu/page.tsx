@@ -19,24 +19,26 @@ type MenuItems = {
 
 const menuItems: MenuItems = {
   coffee: [
-    { name: "Espresso", price: "$3.50", desc: "Rich, bold single shot", img: "/espresso.jpg" },
-    { name: "Latte", price: "$4.75", desc: "Smooth and creamy with art", img: "/latte.jpg" },
-    { name: "Cappuccino", price: "$4.50", desc: "Perfectly balanced with steamed milk", img: "/cappuccino.jpg" },
+    { name: "Double Espresso", price: "$3.50", desc: "Rich, bold double shot", img: "/chowbus_menu/coffee_more/92_double espressos.jpg" },
+    { name: "Latte", price: "$4.75", desc: "Smooth and creamy with art", img: "/chowbus_menu/coffee_more/96_latte.jpg" },
+    { name: "Americano", price: "$3.25", desc: "Classic espresso with hot water", img: "/chowbus_menu/coffee_more/93_americano.jpg" },
+    { name: "House Blend", price: "$2.75", desc: "Dark roast mixed blend", img: "/chowbus_menu/coffee_more/90_house blend.jpg" },
   ],
   smoothies: [
-    { name: "Tropical Mango", price: "$6.25", desc: "Mango, pineapple, and coconut", img: "/muffin.jpg" },
-    { name: "Berry Blast", price: "$6.50", desc: "Mixed berries with banana and yogurt", img: "/cookie.jpg" },
-    { name: "Green Goddess", price: "$6.75", desc: "Spinach, apple, banana, and lime", img: "/green-tea.jpg" },
+    { name: "Mango Matcha Smoothie", price: "$6.25", desc: "Mango and premium matcha blend", img: "/chowbus_menu/smoothies_boba/73_mango matcha (smoothie).jpg" },
+    { name: "Smoothies & Boba Tea", price: "$6.50", desc: "Choose your favorite flavor with boba", img: "/chowbus_menu/smoothies_boba/76_smoothies boba tea (choose your fav).jpg" },
+    { name: "Milkshakes", price: "$6.75", desc: "Creamy milkshakes in various flavors", img: "/chowbus_menu/milkshakes/115_milkshakes (choose your fav).jpg" },
   ],
   bobaTea: [
-    { name: "Classic Milk Tea", price: "$5.50", desc: "Traditional black tea with tapioca pearls", img: "/chai.jpg" },
-    { name: "Taro Milk Tea", price: "$5.75", desc: "Creamy taro with chewy boba", img: "/chai.jpg" },
-    { name: "Matcha Latte", price: "$6.00", desc: "Premium matcha with milk and boba", img: "/matcha-latte.png" },
+    { name: "Signature Milk Tea", price: "$5.50", desc: "Our signature blend with tapioca pearls", img: "/chowbus_menu/milk_tea_boba/80_signature milk tea.jpg" },
+    { name: "Taro Latte", price: "$5.75", desc: "Creamy taro with chewy boba", img: "/chowbus_menu/favorite_x/82_taro latte.jpg" },
+    { name: "Matcha Latte", price: "$6.00", desc: "Premium matcha with milk (hot or iced)", img: "/chowbus_menu/ohh_matcha/69_matcha latte (hot or iced).jpg" },
+    { name: "Brown Sugar Milk Tea", price: "$6.25", desc: "Rich brown sugar sweetened milk tea", img: "/chowbus_menu/milk_tea_boba/81_brown sugar milk tea.jpg" },
   ],
   sandwiches: [
-    { name: "Vietnamese Banh Mi", price: "$8.50", desc: "Crispy baguette with pork, pickled vegetables, and herbs", img: "/images/breakfast-burrito.jpg" },
-    { name: "Grilled Chicken Banh Mi", price: "$8.75", desc: "Marinated grilled chicken with fresh cilantro", img: "/burrito.jpg" },
-    { name: "Vegetarian Banh Mi", price: "$8.00", desc: "Tofu and fresh vegetables with Vietnamese flavors", img: "/avocado-toast.jpg" },
+    { name: "Roasted Chicken Banh Mi", price: "$8.75", desc: "Marinated roasted chicken with fresh herbs", img: "/chowbus_menu/banh_mi_sandwich/119_roasted chicken banh mi.jpg" },
+    { name: "Veggie Tofu Banh Mi", price: "$8.00", desc: "Fresh tofu and vegetables with Vietnamese flavors", img: "/chowbus_menu/banh_mi_sandwich/89_veggie tofu banh mi.jpg" },
+    { name: "Egg & Ham Banh Mi", price: "$8.50", desc: "Egg and ham with pate and fresh vegetables", img: "/chowbus_menu/banh_mi_sandwich/120_egg & ham_pate banh mi.jpg" },
   ],
 };
 
