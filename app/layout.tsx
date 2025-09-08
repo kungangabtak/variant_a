@@ -46,6 +46,7 @@ function Navbar() {
             </svg>
           </button>
         </div>
+        <a href="/menu" className="hidden lg:block text-gray-800 hover:text-sage font-medium text-base sm:text-lg lg:text-xl transition-all duration-300 hover:scale-105">Menu</a>
         <a href="/locations/chicago" className="hidden lg:block text-gray-800 hover:text-sage font-medium text-base sm:text-lg lg:text-xl transition-all duration-300 hover:scale-105">North Park</a>
         <a href="/locations/evanston" className="hidden lg:block text-gray-800 hover:text-sage font-medium text-base sm:text-lg lg:text-xl transition-all duration-300 hover:scale-105">Evanston</a>
       </div>
@@ -59,6 +60,7 @@ function Navbar() {
       <div className="hidden lg:flex items-center lg:justify-self-center gap-6 sm:gap-10 lg:gap-16">
         <a href="/about" className="text-gray-800 hover:text-sage font-medium text-base sm:text-lg lg:text-xl transition-all duration-300 hover:scale-105">About</a>
         <a href="/contact" className="text-gray-800 hover:text-sage font-medium text-base sm:text-lg lg:text-xl transition-all duration-300 hover:scale-105">Contact</a>
+        <a href="#order" className="bg-sage text-white px-6 py-3 rounded-full font-medium text-base sm:text-lg hover:bg-warm-dark transition-all duration-300 hover:scale-105 shadow-warm btn-warm">Order Now</a>
       </div>
 
       {/* Mobile Menu Overlay (rendered in a portal to escape stacking contexts) */}
@@ -103,6 +105,13 @@ function Navbar() {
                   Home
                 </a>
                 <a
+                  href="/menu"
+                  className="block rounded-lg px-4 py-3 text-lg text-gray-900 hover:bg-gray-100 transition-colors font-medium"
+                  onClick={closeMenu}
+                >
+                  Menu
+                </a>
+                <a
                   href="/locations/chicago"
                   className="block rounded-lg px-4 py-3 text-lg text-gray-900 hover:bg-gray-100 transition-colors font-medium"
                   onClick={closeMenu}
@@ -129,6 +138,13 @@ function Navbar() {
                   onClick={closeMenu}
                 >
                   Contact
+                </a>
+                <a
+                  href="#order"
+                  className="block rounded-lg px-4 py-3 text-lg text-white bg-sage hover:bg-warm-dark transition-colors font-medium mt-4"
+                  onClick={closeMenu}
+                >
+                  Order Now
                 </a>
               </nav>
             </div>

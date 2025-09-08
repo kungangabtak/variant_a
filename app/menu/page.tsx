@@ -91,14 +91,48 @@ export default function MenuPage() {
                 </div>
                 <h4 className="text-lg sm:text-xl font-light text-gray-900 mb-1 sm:mb-2">{item.name}</h4>
                 <p className="text-gray-600 text-xs sm:text-sm mb-2 sm:mb-3">{item.desc}</p>
-                <p className="text-base sm:text-lg font-light text-gray-900">{item.price}</p>
+                <div className="flex justify-between items-center">
+                  <p className="text-base sm:text-lg font-light text-gray-900">{item.price}</p>
+                  <button className="bg-sage text-white px-4 py-2 rounded-full text-sm font-medium hover:bg-warm-dark transition-all duration-300 hover:scale-105">
+                    Add to Order
+                  </button>
+                </div>
               </div>
             ))}
           </div>
+
+          {/* Order Now Section */}
+          <div id="order" className="mt-12 sm:mt-16 text-center bg-white rounded-2xl p-8 sm:p-10 shadow-warm">
+            <h3 className="text-2xl sm:text-3xl font-light text-gray-900 mb-4">Ready to Order?</h3>
+            <p className="text-gray-600 mb-6 sm:mb-8">Choose your location to place an order for pickup or delivery</p>
+            
+            <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center max-w-md mx-auto">
+              <a 
+                href="https://www.chowbus.com" 
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-sage text-white px-8 py-4 rounded-full font-medium text-lg hover:bg-warm-dark transition-all duration-300 hover:scale-105 shadow-warm btn-warm"
+              >
+                Order from North Park
+              </a>
+              <a 
+                href="https://www.chowbus.com" 
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-accent text-white px-8 py-4 rounded-full font-medium text-lg hover:bg-warm-dark transition-all duration-300 hover:scale-105 shadow-warm btn-warm"
+              >
+                Order from Evanston
+              </a>
+            </div>
+            
+            <p className="text-sm text-gray-500 mt-4">
+              Or call us directly: 
+              <a href="tel:+17735396078" className="text-sage hover:underline ml-1">North Park: (773) 539-6078</a> | 
+              <a href="tel:+18474250022" className="text-sage hover:underline ml-1">Evanston: (847) 425-0022</a>
+            </p>
+          </div>
         </div>
       </section>
-
-
     </main>
   );
 } 

@@ -199,6 +199,55 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Value Proposition Section */}
+      <section className="py-20 sm:py-28 bg-white">
+        <div className="max-w-6xl mx-auto px-6 sm:px-8">
+          <div className="text-center mb-12 sm:mb-16 fade-in-up">
+            <SectionHeading className="mb-4 text-warm-dark">Why Choose Outdoor Café?</SectionHeading>
+            <div className="w-16 h-1 bg-sage mx-auto rounded-full mb-6"></div>
+            <SectionText className="max-w-3xl mx-auto">
+              More than just coffee—we're your neighborhood gathering place where fresh ingredients, warm hospitality, and outdoor vibes come together.
+            </SectionText>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 sm:gap-12">
+            <div className="text-center fade-in-up stagger-1">
+              <div className="w-20 h-20 bg-sage/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                <span className="text-3xl">☕</span>
+              </div>
+              <h3 className="text-xl sm:text-2xl font-light text-gray-900 mb-4">Fresh Roasted Daily</h3>
+              <p className="text-gray-600 leading-relaxed">
+                Premium coffee beans roasted to perfection, ensuring every cup delivers that perfect aroma and flavor you crave.
+              </p>
+            </div>
+
+            <div className="text-center fade-in-up stagger-2">
+              <div className="w-20 h-20 bg-sage/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                <span className="text-3xl">🌿</span>
+              </div>
+              <h3 className="text-xl sm:text-2xl font-light text-gray-900 mb-4">Garden-Fresh Ingredients</h3>
+              <p className="text-gray-600 leading-relaxed">
+                From our signature boba teas to Vietnamese Banh Mi, we use only the freshest ingredients sourced locally whenever possible.
+              </p>
+            </div>
+
+            <div className="text-center fade-in-up stagger-3">
+              <div className="w-20 h-20 bg-sage/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                <span className="text-3xl">🪴</span>
+              </div>
+              <h3 className="text-xl sm:text-2xl font-light text-gray-900 mb-4">Outdoor Oasis</h3>
+              <p className="text-gray-600 leading-relaxed">
+                Escape the hustle with our comfortable outdoor seating—perfect for meetings, studying, or just enjoying life at a slower pace.
+              </p>
+            </div>
+          </div>
+
+          <div className="text-center mt-12 sm:mt-16 fade-in-up stagger-4">
+            <Button href="/menu" variant="primary">Explore Our Menu</Button>
+          </div>
+        </div>
+      </section>
+
       {/* Locations Section */}
       <section className="py-20 sm:py-28 md:py-36 bg-warm-light">
         <div className="max-w-7xl mx-auto px-6 sm:px-8">
