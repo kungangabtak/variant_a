@@ -387,43 +387,40 @@ const evanstonMenu: MenuItem[] = [
 
 export default function EvanstonMenuPage() {
   const categories = [
-    { id: "Matcha Specialties", label: "Matcha Specialties", emoji: "🍵", color: "bg-green-100 text-green-800 border-green-200" },
-    { id: "Coffee & Espresso", label: "Coffee & Espresso", emoji: "☕", color: "bg-amber-100 text-amber-800 border-amber-200" },
-    { id: "Milk Tea & Boba", label: "Milk Tea & Boba", emoji: "🧋", color: "bg-purple-100 text-purple-800 border-purple-200" },
-    { id: "Specialty Teas", label: "Specialty Teas", emoji: "🍃", color: "bg-emerald-100 text-emerald-800 border-emerald-200" },
-    { id: "Smoothies & Drinks", label: "Smoothies & Drinks", emoji: "🥤", color: "bg-pink-100 text-pink-800 border-pink-200" },
-    { id: "Hot Beverages", label: "Hot Beverages", emoji: "☕", color: "bg-orange-100 text-orange-800 border-orange-200" },
-    { id: "Banh Mi Sandwiches", label: "Banh Mi Sandwiches", emoji: "🥖", color: "bg-yellow-100 text-yellow-800 border-yellow-200" },
-    { id: "Spring Rolls", label: "Spring Rolls", emoji: "🥗", color: "bg-red-100 text-red-800 border-red-200" },
-    { id: "Salads & Light Food", label: "Salads & Light Food", emoji: "🥗", color: "bg-blue-100 text-blue-800 border-blue-200" },
+    { id: "Matcha Specialties", label: "Matcha Specialties", emoji: "🍵", image: "/chowbus_menu_evanston_enhanced/matcha_specialties/002_matcha_latte_hot_or_iced.jpg" },
+    { id: "Coffee & Espresso", label: "Coffee & Espresso", emoji: "☕", image: "/chowbus_menu_evanston_enhanced/coffee_espresso/045_latte_choose_your_fav.jpg" },
+    { id: "Milk Tea & Boba", label: "Milk Tea & Boba", emoji: "🧋", image: "/chowbus_menu_evanston_enhanced/milk_tea_boba/007_signature_milk_tea.jpg" },
+    { id: "Specialty Teas", label: "Specialty Teas", emoji: "🍃", image: "/chowbus_menu_evanston_enhanced/specialty_teas/030_loose_leaf_tea_choose_your_fav.jpg" },
+    { id: "Smoothies & Drinks", label: "Smoothies & Drinks", emoji: "🥤", image: "/chowbus_menu_evanston_enhanced/smoothies_drinks/023_smoothies__boba_tea_choose_up_to_2_flavors.jpg" },
+    { id: "Hot Beverages", label: "Hot Beverages", emoji: "☕", image: "/chowbus_menu_evanston_enhanced/hot_beverages/052_hot_cocoa.jpg" },
+    { id: "Banh Mi Sandwiches", label: "Banh Mi Sandwiches", emoji: "🥖", image: "/chowbus_menu_evanston_enhanced/banh_mi_sandwiches/015_hampork__pate_banh_mi.jpg" },
+    { id: "Spring Rolls", label: "Spring Rolls", emoji: "🌯", image: "/chowbus_menu_evanston_enhanced/spring_rolls/020_shrimp_spring_roll_peanut_sauce.jpg" },
+    { id: "Salads & Light Food", label: "Salads & Light Food", emoji: "🥗", image: "/chowbus_menu_evanston_enhanced/salads_food/022_savory_salad.jpg" },
   ];
 
-  const [activeCategory, setActiveCategory] = useState<string>(categories[0].id);
-  const [searchTerm, setSearchTerm] = useState<string>("");
-
-  const filteredItems = evanstonMenu.filter(item => 
-    (activeCategory === "All" || item.category === activeCategory) &&
-    (searchTerm === "" || item.name.toLowerCase().includes(searchTerm.toLowerCase()) || 
-     item.description.toLowerCase().includes(searchTerm.toLowerCase()))
-  );
+  // Group items by category
+  const groupedMenu = categories.map(category => ({
+    ...category,
+    items: evanstonMenu.filter(item => item.category === category.id)
+  })).filter(group => group.items.length > 0);
   return (
     <main className="w-full min-h-screen bg-cream">
       {/* Header */}
-      <section className="py-16 sm:py-20 bg-warm-light relative overflow-hidden">
+      <section className="py-10 sm:py-12 bg-warm-light relative overflow-hidden">
         {/* Floating background elements */}
         <div className="absolute top-12 right-10 w-2 h-2 bg-accent-solid/20 rounded-full animate-float"></div>
         <div className="absolute bottom-10 left-16 w-1.5 h-1.5 bg-accent-solid/30 rounded-full animate-float" style={{animationDelay: '3s'}}></div>
-        
+
         <div className="max-w-7xl mx-auto px-6 sm:px-8 text-center relative z-10">
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-light mb-6 text-warm-dark leading-tight text-balance">
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-light mb-4 text-warm-dark leading-tight text-balance">
             Evanston Location
           </h1>
-          <div className="w-24 h-1 bg-sage mx-auto rounded-full mb-6"></div>
-          <p className="text-xl sm:text-2xl text-gray-700 font-light max-w-3xl mx-auto leading-relaxed-plus text-balance">
+          <div className="w-20 h-1 bg-sage mx-auto rounded-full mb-4"></div>
+          <p className="text-lg sm:text-xl text-gray-700 font-light max-w-3xl mx-auto leading-relaxed text-balance">
             Outdoor dining surrounded by nature
           </p>
-          <div className="mt-6">
-            <p className="text-base sm:text-lg text-gray-600 font-light">
+          <div className="mt-4">
+            <p className="text-sm sm:text-base text-gray-600 font-light">
               2012 Central Street • Evanston, IL 60201
             </p>
           </div>
@@ -431,28 +428,33 @@ export default function EvanstonMenuPage() {
       </section>
 
       {/* Order Online Section */}
-      <section className="py-12 sm:py-16 bg-white">
+      <section className="py-8 sm:py-10 bg-white">
         <div className="max-w-4xl mx-auto px-6 sm:px-8 text-center">
-          <div className="card-modern p-8 sm:p-12 hover-glow">
-            <div className="space-y-6">
+          <div className="card-modern p-6 sm:p-8 hover-glow">
+            <div className="space-y-4">
               <div className="flex justify-center">
-                <div className="w-16 h-16 bg-sage/10 rounded-full flex items-center justify-center animate-pulse-warm">
-                  <span className="text-2xl">🛒</span>
+                <div className="w-12 h-12 bg-sage/10 rounded-full flex items-center justify-center animate-pulse-warm">
+                  <span className="text-xl">🛒</span>
                 </div>
               </div>
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-light text-warm-dark text-balance">
+              <h2 className="text-xl sm:text-2xl lg:text-3xl font-light text-warm-dark text-balance">
                 Order Online for Pickup
               </h2>
-              <p className="text-lg sm:text-xl text-gray-700 leading-relaxed-plus max-w-2xl mx-auto text-balance">
-                Skip the line and order ahead! Browse our full menu with specialty items including matcha lattes, Vietnamese coffee, banh mi sandwiches, and more.
-              </p>
-              <div className="pt-4">
-                <a 
+              <div className="flex items-center justify-center space-x-4 text-xs sm:text-sm text-gray-600">
+                <span className="flex items-center">
+                  <span className="w-2 h-2 bg-sage rounded-full mr-2"></span>
+                  Currently Open
+                </span>
+                <span>•</span>
+                <span>Sun-Thu: 7AM-7PM • Fri-Sat: 7AM-9PM</span>
+              </div>
+              <div className="pt-2">
+                <a
                   href="https://pos.chowbus.com/online-ordering/store/Outdoor-Cafe-Evanston/22091"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="
-                    inline-block px-10 sm:px-12 py-5 sm:py-6 font-medium text-lg sm:text-xl 
+                    inline-block px-8 sm:px-10 py-4 sm:py-5 font-medium text-base sm:text-lg
                     transition-all duration-300 hover:scale-105 btn-warm hover-glow rounded-full
                     bg-accent-solid text-white hover:bg-warm-dark shadow-warm-lg
                     border-2 border-accent-solid hover:border-warm-dark
@@ -461,157 +463,58 @@ export default function EvanstonMenuPage() {
                   Order Now via ChowBus
                 </a>
               </div>
-              <div className="flex items-center justify-center space-x-4 text-sm text-gray-600 pt-2">
-                <span className="flex items-center">
-                  <span className="w-2 h-2 bg-sage rounded-full mr-2"></span>
-                  Currently Open
-                </span>
-                <span>•</span>
-                <span>Sun-Thu: 7AM-7PM • Fri-Sat: 7AM-9PM</span>
-              </div>
             </div>
           </div>
         </div>
       </section>
 
       {/* Menu Section */}
-      <section className="py-16 sm:py-20 bg-warm-light">
+      <section className="py-10 sm:py-12 bg-warm-light">
         <div className="max-w-7xl mx-auto px-6 sm:px-8">
-          <div className="text-center mb-8 sm:mb-12">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-light mb-6 text-warm-dark text-balance">
-              Evanston Full Menu
+          <div className="text-center mb-8 sm:mb-10">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-light mb-4 text-warm-dark text-balance">
+              Full Menu
             </h2>
-            <div className="w-20 h-1 bg-sage mx-auto rounded-full mb-6"></div>
-            <p className="text-lg sm:text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed-plus text-balance">
-              Browse our complete menu featuring specialty matcha drinks, Vietnamese banh mi, artisanal coffee, and more.
-            </p>
+            <div className="w-16 h-1 bg-sage mx-auto rounded-full"></div>
           </div>
 
-          {/* Search Bar */}
-          <div className="max-w-md mx-auto mb-8">
-            <div className="relative">
-              <input
-                type="text"
-                placeholder="Search menu items..."
-                value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
-                className="w-full px-4 py-3 pl-12 bg-white rounded-full border border-gray-300 focus:border-sage focus:ring-2 focus:ring-sage/20 transition-all"
-              />
-              <svg className="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-              </svg>
-            </div>
-          </div>
-
-          {/* Category Pills */}
-          <div className="flex flex-wrap justify-center gap-2 sm:gap-3 mb-10">
-            <button
-              onClick={() => setActiveCategory("All")}
-              className={`${activeCategory === "All" 
-                ? "bg-sage text-white border-sage shadow-md" 
-                : "bg-white text-gray-700 border-gray-300 hover:border-sage hover:text-sage"} 
-                inline-flex items-center gap-2 px-4 py-2 rounded-full border transition-all duration-300 hover:scale-105`}
-            >
-              <span>🍽️</span>
-              <span className="font-medium text-sm">All Items</span>
-            </button>
-            {categories.map((cat) => (
-              <button
-                key={cat.id}
-                onClick={() => setActiveCategory(cat.id)}
-                className={`${activeCategory === cat.id 
-                  ? `${cat.color} shadow-md border-2` 
-                  : "bg-white text-gray-700 border-gray-300 hover:border-gray-400"} 
-                  inline-flex items-center gap-2 px-4 py-2 rounded-full border transition-all duration-300 hover:scale-105`}
-              >
-                <span className="text-sm">{cat.emoji}</span>
-                <span className="font-medium text-sm hidden sm:inline">{cat.label}</span>
-                <span className="font-medium text-sm sm:hidden">{cat.label.split(' ')[0]}</span>
-              </button>
-            ))}
-          </div>
-
-          {/* Results Count */}
-          <div className="text-center mb-8">
-            <p className="text-gray-600 text-sm">
-              {searchTerm ? `Found ${filteredItems.length} items matching "${searchTerm}"` : 
-               activeCategory === "All" ? `Showing all ${filteredItems.length} items` :
-               `${filteredItems.length} items in ${activeCategory}`}
-            </p>
-          </div>
-          
-          {/* Menu Items Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
-            {filteredItems.map((item) => (
-              <div key={item.id} className="card-modern p-5 sm:p-6 hover-lift hover:bg-sage/5 ring-1 ring-transparent hover:ring-sage/20 transition-all duration-300 group">
-                <div className="flex items-center gap-5 sm:gap-6">
-                  <div className="w-24 h-24 sm:w-32 sm:h-32 bg-gray-100 rounded-xl overflow-hidden flex-shrink-0">
-                    <img 
-                      src={item.image} 
-                      alt={item.name} 
-                      className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110" 
+          {/* Menu Grid - Masonry layout on desktop, single column on mobile */}
+          <div className="columns-1 lg:columns-2 gap-8 lg:gap-12">
+            {groupedMenu.map((group) => (
+              <div key={group.id} className="bg-white rounded-2xl shadow-warm overflow-hidden mb-8 lg:mb-12 break-inside-avoid">
+                {/* Category Header with Image */}
+                <div className="relative overflow-hidden">
+                  <div className="h-48 sm:h-56 md:h-64 overflow-hidden">
+                    <img
+                      src={group.image}
+                      alt={group.label}
+                      className="w-full h-full object-cover"
                     />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent"></div>
                   </div>
-                  <div className="flex-1 min-w-0">
-                    <div className="flex items-start justify-between gap-3 mb-2">
-                      <h4 className="text-lg sm:text-xl font-semibold text-gray-900">{item.name}</h4>
-                      <span className="inline-flex items-center px-3 py-1 rounded-full bg-sage/10 text-sage text-sm font-medium whitespace-nowrap">
-                        {item.price}
-                      </span>
-                    </div>
-                    <p className="text-gray-600 text-sm leading-relaxed mb-3">{item.description}</p>
-                    <div className="flex items-center gap-2">
-                      <span className={`inline-flex items-center px-2 py-1 rounded-full text-xs font-medium ${categories.find(c => c.id === item.category)?.color || "bg-gray-100 text-gray-700"}`}>
-                        {categories.find(c => c.id === item.category)?.emoji} {item.category}
-                      </span>
-                    </div>
+                  <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6">
+                    <h3 className="text-2xl sm:text-3xl font-light text-white flex items-center gap-3">
+                      <span className="text-2xl">{group.emoji}</span>
+                      {group.label}
+                    </h3>
                   </div>
+                </div>
+
+                {/* Menu Items */}
+                <div className="p-4 sm:p-6 space-y-3">
+                  {group.items.map((item) => (
+                    <div key={item.id} className="border-b border-gray-100 last:border-0 pb-3 last:pb-0">
+                      <h4 className="text-base font-medium text-gray-900 mb-1">{item.name}</h4>
+                      <p className="text-gray-600 text-sm leading-snug">{item.description}</p>
+                    </div>
+                  ))}
                 </div>
               </div>
             ))}
           </div>
-
-          {/* No Results Message */}
-          {filteredItems.length === 0 && (
-            <div className="text-center py-12">
-              <div className="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-2xl">🔍</span>
-              </div>
-              <h3 className="text-xl font-medium text-gray-900 mb-2">No items found</h3>
-              <p className="text-gray-600">Try adjusting your search or browse a different category.</p>
-            </div>
-          )}
         </div>
       </section>
 
-      {/* Google Reviews Section */}
-      <section className="py-16 sm:py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-6 sm:px-8">
-          <div className="text-center mb-6 sm:mb-8">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-light mb-6 text-warm-dark text-balance">
-              What people are saying
-            </h2>
-            <div className="w-20 h-1 bg-sage mx-auto rounded-full mb-6"></div>
-            <p className="text-lg sm:text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed-plus text-balance">
-              Browse Google reviews for our Evanston location.
-            </p>
-          </div>
-          <GoogleReviewsMarquee
-            placeQuery="2012 Central Street, Evanston, IL 60201"
-            reviewsUrl="https://maps.app.goo.gl/pN5xotevZmL9s9Kd6"
-          />
-          <div className="text-center mt-8">
-            <a
-              href="https://maps.app.goo.gl/pN5xotevZmL9s9Kd6"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block px-8 py-4 rounded-full bg-sage text-white hover:bg-warm-dark transition-colors btn-warm"
-            >
-              Read all reviews on Google
-            </a>
-          </div>
-        </div>
-      </section>
     </main>
   );
 }

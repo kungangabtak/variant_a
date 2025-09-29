@@ -332,21 +332,21 @@ export default function NorthParkMenuPage() {
   return (
     <main className="w-full min-h-screen bg-cream">
       {/* Header */}
-      <section className="py-16 sm:py-20 bg-warm-light relative overflow-hidden">
+      <section className="py-10 sm:py-12 bg-warm-light relative overflow-hidden">
         {/* Floating background elements */}
         <div className="absolute top-10 left-10 w-2 h-2 bg-accent-solid/20 rounded-full animate-float"></div>
         <div className="absolute bottom-12 right-16 w-1.5 h-1.5 bg-accent-solid/30 rounded-full animate-float" style={{animationDelay: '2s'}}></div>
-        
+
         <div className="max-w-7xl mx-auto px-6 sm:px-8 text-center relative z-10">
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-light mb-6 text-warm-dark leading-tight text-balance">
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-light mb-4 text-warm-dark leading-tight text-balance">
             North Park Location
           </h1>
-          <div className="w-24 h-1 bg-sage mx-auto rounded-full mb-6"></div>
-          <p className="text-xl sm:text-2xl text-gray-700 font-light max-w-3xl mx-auto leading-relaxed-plus text-balance">
+          <div className="w-20 h-1 bg-sage mx-auto rounded-full mb-4"></div>
+          <p className="text-lg sm:text-xl text-gray-700 font-light max-w-3xl mx-auto leading-relaxed text-balance">
             Urban garden oasis in the heart of the city
           </p>
-          <div className="mt-6">
-            <p className="text-base sm:text-lg text-gray-600 font-light">
+          <div className="mt-4">
+            <p className="text-sm sm:text-base text-gray-600 font-light">
               3257 W Bryn Mawr Ave, Chicago, IL 60659
             </p>
           </div>
@@ -354,28 +354,33 @@ export default function NorthParkMenuPage() {
       </section>
 
       {/* Order Online Section */}
-      <section className="py-12 sm:py-16 bg-white">
+      <section className="py-8 sm:py-10 bg-white">
         <div className="max-w-4xl mx-auto px-6 sm:px-8 text-center">
-          <div className="card-modern p-8 sm:p-12 hover-glow">
-            <div className="space-y-6">
+          <div className="card-modern p-6 sm:p-8 hover-glow">
+            <div className="space-y-4">
               <div className="flex justify-center">
-                <div className="w-16 h-16 bg-sage/10 rounded-full flex items-center justify-center animate-pulse-warm">
-                  <span className="text-2xl">🛒</span>
+                <div className="w-12 h-12 bg-sage/10 rounded-full flex items-center justify-center animate-pulse-warm">
+                  <span className="text-xl">🛒</span>
                 </div>
               </div>
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-light text-warm-dark text-balance">
+              <h2 className="text-xl sm:text-2xl lg:text-3xl font-light text-warm-dark text-balance">
                 Order Online for Pickup
               </h2>
-              <p className="text-lg sm:text-xl text-gray-700 leading-relaxed-plus max-w-2xl mx-auto text-balance">
-                Skip the line and order ahead! Browse our full menu with specialty items including matcha lattes, Vietnamese coffee, banh mi sandwiches, and more.
-              </p>
-              <div className="pt-4">
-                <a 
+              <div className="flex items-center justify-center space-x-4 text-xs sm:text-sm text-gray-600">
+                <span className="flex items-center">
+                  <span className="w-2 h-2 bg-sage rounded-full mr-2"></span>
+                  Currently Open
+                </span>
+                <span>•</span>
+                <span>Mon-Thu: 8AM-8PM • Fri-Sun: 8AM-9PM</span>
+              </div>
+              <div className="pt-2">
+                <a
                   href="https://pos.chowbus.com/online-ordering/store/Outdoor-Cafe/20978"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="
-                    inline-block px-10 sm:px-12 py-5 sm:py-6 font-medium text-lg sm:text-xl 
+                    inline-block px-8 sm:px-10 py-4 sm:py-5 font-medium text-base sm:text-lg
                     transition-all duration-300 hover:scale-105 btn-warm hover-glow rounded-full
                     bg-accent-solid text-white hover:bg-warm-dark shadow-warm-lg
                     border-2 border-accent-solid hover:border-warm-dark
@@ -384,36 +389,28 @@ export default function NorthParkMenuPage() {
                   Order Now via ChowBus
                 </a>
               </div>
-              <div className="flex items-center justify-center space-x-4 text-sm text-gray-600 pt-2">
-                <span className="flex items-center">
-                  <span className="w-2 h-2 bg-sage rounded-full mr-2"></span>
-                  Currently Open
-                </span>
-                <span>•</span>
-                <span>Mon-Thu: 8AM-8PM • Fri-Sun: 8AM-9PM</span>
-              </div>
             </div>
           </div>
         </div>
       </section>
 
       {/* Menu Section */}
-      <section className="py-16 sm:py-20 bg-warm-light">
+      <section className="py-10 sm:py-12 bg-warm-light">
         <div className="max-w-7xl mx-auto px-6 sm:px-8">
-          <div className="text-center mb-12 sm:mb-16">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-light mb-6 text-warm-dark text-balance">
+          <div className="text-center mb-8 sm:mb-10">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-light mb-4 text-warm-dark text-balance">
               Full Menu
             </h2>
-            <div className="w-20 h-1 bg-sage mx-auto rounded-full"></div>
+            <div className="w-16 h-1 bg-sage mx-auto rounded-full"></div>
           </div>
 
-          {/* Menu Grid - 2 columns on desktop, 1 on mobile */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
+          {/* Menu Grid - Masonry layout on desktop, single column on mobile */}
+          <div className="columns-1 lg:columns-2 gap-8 lg:gap-12">
             {groupedMenu.map((group) => (
-              <div key={group.id} className="space-y-6">
+              <div key={group.id} className="bg-white rounded-2xl shadow-warm overflow-hidden mb-8 lg:mb-12 break-inside-avoid">
                 {/* Category Header with Image */}
-                <div className="relative overflow-hidden rounded-2xl shadow-warm">
-                  <div className="h-32 sm:h-40 overflow-hidden">
+                <div className="relative overflow-hidden">
+                  <div className="h-48 sm:h-56 md:h-64 overflow-hidden">
                     <img
                       src={group.image}
                       alt={group.label}
@@ -430,11 +427,11 @@ export default function NorthParkMenuPage() {
                 </div>
 
                 {/* Menu Items */}
-                <div className="bg-white rounded-2xl p-6 sm:p-8 shadow-warm space-y-5">
+                <div className="p-4 sm:p-6 space-y-3">
                   {group.items.map((item) => (
-                    <div key={item.id} className="border-b border-gray-100 last:border-0 pb-5 last:pb-0">
-                      <h4 className="text-lg font-medium text-gray-900 mb-2">{item.name}</h4>
-                      <p className="text-gray-600 text-sm leading-relaxed">{item.description}</p>
+                    <div key={item.id} className="border-b border-gray-100 last:border-0 pb-3 last:pb-0">
+                      <h4 className="text-base font-medium text-gray-900 mb-1">{item.name}</h4>
+                      <p className="text-gray-600 text-sm leading-snug">{item.description}</p>
                     </div>
                   ))}
                 </div>
