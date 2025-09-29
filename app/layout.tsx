@@ -59,7 +59,6 @@ function Navbar() {
       <div className="hidden lg:flex items-center lg:justify-self-center gap-6 sm:gap-10 lg:gap-16">
         <a href="/about" className="text-gray-800 hover:text-sage font-medium text-base sm:text-lg lg:text-xl transition-all duration-300 hover:scale-105">About</a>
         <a href="/contact" className="text-gray-800 hover:text-sage font-medium text-base sm:text-lg lg:text-xl transition-all duration-300 hover:scale-105">Contact</a>
-        <a href="#order" className="bg-sage text-white px-6 py-3 rounded-full font-medium text-base sm:text-lg hover:bg-warm-dark transition-all duration-300 hover:scale-105 shadow-warm btn-warm">Order Now</a>
       </div>
 
       {/* Mobile Menu Overlay (rendered in a portal to escape stacking contexts) */}
@@ -131,13 +130,6 @@ function Navbar() {
                 >
                   Contact
                 </a>
-                <a
-                  href="#order"
-                  className="block rounded-lg px-4 py-3 text-lg text-white bg-sage hover:bg-warm-dark transition-colors font-medium mt-4"
-                  onClick={closeMenu}
-                >
-                  Order Now
-                </a>
               </nav>
             </div>
           </div>
@@ -182,7 +174,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
             </div>
             
             <div className="pt-6 sm:pt-8 border-t border-gray-800 text-center">
-              <p className="text-gray-400 text-xs sm:text-sm">© 2024 Outdoor Café</p>
+              <p className="text-gray-400 text-xs sm:text-sm">© 2025 Outdoor Café</p>
             </div>
           </div>
         </footer>

@@ -306,47 +306,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Sustainability Section */}
-      <section className="py-24 sm:py-32 md:py-48 bg-warm-solid">
-        <div className="max-w-7xl mx-auto px-6 sm:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 sm:gap-16 lg:gap-24 items-center">
-            <div className="space-y-8 sm:space-y-10 fade-in-left">
-              <SectionHeading className="text-warm-dark">
-                <span className="text-sage">SUSTAINABILITY</span>
-              </SectionHeading>
-              <div className="w-20 h-1 bg-sage rounded-full"></div>
-              <div className="space-y-6">
-                <SectionText className="text-xl">
-                  Sustainability that's the way we roll... For the environment, for our community, for our employees, for the entire supply chain, nearly everything we serve is compostable.
-                </SectionText>
-                <div className="flex items-center space-x-6 py-4">
-                  <span className="text-3xl animate-float">♻️</span>
-                  <span className="text-3xl animate-float" style={{animationDelay: '1s'}}>🌱</span>
-                  <span className="text-3xl animate-float" style={{animationDelay: '2s'}}>🌍</span>
-                  <span className="font-medium text-sage text-lg">Compostable packaging</span>
-                </div>
-                <SectionText>
-                  We proud to offer our employees a living wage, and good benefits too. That's the essence of Specialty coffee... from seed to cup, the entire supply chain, and why we believe is thrival for all.
-                </SectionText>
-              </div>
-            </div>
-            
-            <div className="fade-in-right">
-              <div className="relative overflow-hidden rounded-3xl shadow-warm-lg hover-lift">
-                <img 
-                  src="/sustainable.png" 
-                  alt="Sustainable Coffee" 
-                  className="w-full h-80 sm:h-96 lg:h-[500px] object-cover transition-transform duration-500 hover:scale-105 img-warm-filter"
-                />
-                <div className="absolute top-6 right-6 w-3 h-3 bg-sage/60 rounded-full animate-float"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Community Vibes Section */}
-      <section className="py-20 sm:py-28 md:py-40 bg-cream">
+      <section className="py-20 sm:py-28 md:py-40 bg-warm-solid">
         <div className="max-w-7xl mx-auto px-6 sm:px-8">
           <div className="bg-white rounded-3xl p-8 sm:p-12 md:p-16 lg:p-20 shadow-warm transform -rotate-1 scale-in">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 sm:gap-12 lg:gap-16 items-center">
