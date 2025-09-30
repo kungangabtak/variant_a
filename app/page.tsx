@@ -133,14 +133,14 @@ export default function Home() {
       {/* Hero Section */}
       <section className="h-[70vh] flex items-center justify-center relative overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <img 
-            src="/patio-hero.png" 
-            alt="Outdoor Café Patio Ambiance" 
+          <img
+            src="/cover.jpg"
+            alt="Outdoor Café Patio Ambiance"
             className="w-full h-full object-cover"
             loading="eager"
           />
           {/* Dark overlay */}
-          <div className="absolute inset-0 bg-black/10"></div>
+          <div className="absolute inset-0 bg-warm-dark/70"></div>
         </div>
         
         {/* Floating background elements */}
@@ -167,7 +167,7 @@ export default function Home() {
             <p className="text-lg sm:text-xl md:text-2xl text-white/90 font-light mb-12 max-w-4xl mx-auto leading-relaxed text-shadow-warm text-balance">
               Cozy and comfortable, there's room for everyone at Outdoor Café
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center animate-pulse-warm">
+            <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center">
               <a 
                 href="https://pos.chowbus.com/online-ordering/store/Outdoor-Cafe/20978"
                 target="_blank"
@@ -233,17 +233,13 @@ export default function Home() {
 
             <div className="text-center fade-in-up stagger-3">
               <div className="w-20 h-20 bg-sage/10 rounded-full flex items-center justify-center mx-auto mb-6">
-                <span className="text-3xl">🪴</span>
+                <span className="text-3xl">🤝</span>
               </div>
-              <h3 className="text-xl sm:text-2xl font-light text-gray-900 mb-4">Outdoor Oasis</h3>
+              <h3 className="text-xl sm:text-2xl font-light text-gray-900 mb-4">Your Space to Be</h3>
               <p className="text-gray-600 leading-relaxed">
-                Escape the hustle with our comfortable outdoor seating—perfect for meetings, studying, or just enjoying life at a slower pace.
+                Whether you're working solo, meeting with friends, or just taking a breather, find your spot in a calm, welcoming environment where everyone belongs.
               </p>
             </div>
-          </div>
-
-          <div className="text-center mt-12 sm:mt-16 fade-in-up stagger-4">
-            <Button href="/menu" variant="primary">Explore Our Menu</Button>
           </div>
         </div>
       </section>
@@ -311,17 +307,15 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-6 sm:px-8">
           <div className="bg-white rounded-3xl p-8 sm:p-12 md:p-16 lg:p-20 shadow-warm transform -rotate-1 scale-in">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 sm:gap-12 lg:gap-16 items-center">
-              <div className="flex justify-center lg:justify-start">
+              <div className="flex justify-center">
                 <div className="relative transform rotate-2">
                   <div className="w-72 h-72 sm:w-80 sm:h-80 lg:w-96 lg:h-96 rounded-3xl overflow-hidden shadow-warm-lg hover-lift">
-                    <img 
-                      src="/shared.png" 
-                      alt="Good times at the cafe" 
+                    <img
+                      src="/shared.png"
+                      alt="Good times at the cafe"
                       className="w-full h-full object-cover transition-transform duration-500 hover:scale-110 img-warm-filter"
                     />
                   </div>
-                  <div className="absolute -top-2 -right-2 w-5 h-5 bg-accent-solid/30 rounded-full animate-pulse-warm"></div>
-                  <div className="absolute -bottom-4 -left-4 w-3 h-3 bg-warm-light rounded-full animate-float"></div>
                 </div>
               </div>
               
@@ -331,17 +325,11 @@ export default function Home() {
                 </h3>
                 <div className="w-20 h-1 bg-sage rounded-full"></div>
                 <div className="space-y-4 text-gray-700 leading-relaxed">
-                  <p className="text-lg sm:text-xl font-medium text-accent-solid">
-                    Real talk: we're basically your neighborhood hangout that happens to serve really good food.
-                  </p>
                   <p className="text-base sm:text-lg">
                     You know that feeling when you walk into a place and immediately feel at home? That's what we're going for here. Whether you're cramming for finals, catching up with an old friend, or just need somewhere to sit with your thoughts and a really good cup of coffee.
                   </p>
                   <p className="text-base sm:text-lg">
                     We've got outdoor seating when the weather's nice, cozy spots inside when it's not, and WiFi that actually works when you need to pretend you're being productive.
-                  </p>
-                  <p className="text-sm text-gray-600 italic">
-                    P.S. We're also working on a "pay it forward" program because, you know, good vibes should be contagious 💚
                   </p>
                 </div>
               </div>
