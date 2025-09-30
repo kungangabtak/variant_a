@@ -21,7 +21,7 @@ const Button = ({ href, children, variant = "primary" }: { href: string; childre
     href={href} 
     className={`
       inline-block px-8 sm:px-10 py-4 sm:py-5 font-medium text-base sm:text-lg 
-      transition-all duration-300 hover:scale-105 btn-warm hover-glow rounded-full
+      transition-all duration-300 hover:scale-105 btn-warm hover-glow !rounded-full
       ${variant === "primary" 
         ? "border-2 border-sage text-sage hover:bg-sage hover:text-white hover:border-sage shadow-warm" 
         : "border-2 border-white text-white hover:bg-white hover:text-gray-900 shadow-warm-lg"
@@ -61,7 +61,7 @@ export default function Contact() {
   return (
     <main className="w-full min-h-screen bg-cream">
       {/* Hero Section */}
-      <section className="min-h-screen flex items-center justify-center relative overflow-hidden">
+      <section className="min-h-[60vh] flex items-center justify-center relative overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img 
             src="/shared.png" 
@@ -159,7 +159,7 @@ export default function Contact() {
               <div className="text-center pt-4">
                 <button
                   type="submit"
-                  className="w-full sm:w-auto px-12 py-4 bg-red-500 hover:bg-red-600 text-white font-medium text-lg rounded-full transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl"
+                  className="w-full sm:w-auto px-12 py-4 bg-red-500 hover:bg-red-600 text-white font-medium text-lg !rounded-full transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl"
                 >
                   Send
                 </button>
@@ -216,7 +216,7 @@ export default function Contact() {
                   href="https://maps.google.com/maps?q=3257+W+Bryn+Mawr+Ave,+Chicago,+IL+60659"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-block px-6 py-3 border-2 border-sage text-sage hover:bg-sage hover:text-white transition-all duration-300 rounded-full font-medium"
+                  className="inline-block px-6 py-3 border-2 border-sage text-sage hover:bg-sage hover:text-white transition-all duration-300 !rounded-full font-medium"
                 >
                   Get Directions
                 </a>
@@ -258,7 +258,7 @@ export default function Contact() {
                   href="https://maps.google.com/maps?q=456+Sherman+Avenue,+Evanston,+IL+60201"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-block px-6 py-3 border-2 border-sage text-sage hover:bg-sage hover:text-white transition-all duration-300 rounded-full font-medium"
+                  className="inline-block px-6 py-3 border-2 border-sage text-sage hover:bg-sage hover:text-white transition-all duration-300 !rounded-full font-medium"
                 >
                   Get Directions
                 </a>

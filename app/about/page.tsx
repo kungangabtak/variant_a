@@ -61,7 +61,7 @@ export default function About() {
   return (
     <main className="w-full min-h-screen bg-cream">
       {/* Hero Section */}
-      <section className="min-h-screen flex items-center justify-center relative overflow-hidden">
+      <section className="min-h-[60vh] flex items-center justify-center relative overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img 
             src="/espresso.jpg" 

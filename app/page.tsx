@@ -176,7 +176,6 @@ export default function Home() {
                   inline-block px-8 sm:px-10 py-4 sm:py-5 font-medium text-base sm:text-lg 
                   transition-all duration-300 hover:scale-105 btn-warm hover-glow !rounded-full
                   bg-white text-gray-900 hover:bg-gray-100 shadow-lg hover:shadow-xl
-                  active:!rounded-full focus:!rounded-full focus-visible:!rounded-full
                 "
               >
                 Order from North Park
@@ -189,7 +188,6 @@ export default function Home() {
                   inline-block px-8 sm:px-10 py-4 sm:py-5 font-medium text-base sm:text-lg 
                   transition-all duration-300 hover:scale-105 btn-warm hover-glow !rounded-full
                   bg-white text-gray-900 hover:bg-gray-100 shadow-lg hover:shadow-xl
-                  active:!rounded-full focus:!rounded-full focus-visible:!rounded-full
                 "
               >
                 Order from Evanston

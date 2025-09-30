@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import GoogleReviewsMarquee from "../../components/GoogleReviewsMarquee";
 
@@ -386,6 +386,30 @@ const evanstonMenu: MenuItem[] = [
 ];
 
 export default function EvanstonMenuPage() {
+  const [isOpen, setIsOpen] = useState(true);
+
+  useEffect(() => {
+    const checkIfOpen = () => {
+      const now = new Date();
+      const cstTime = new Date(now.toLocaleString("en-US", { timeZone: "America/Chicago" }));
+      const day = cstTime.getDay(); // 0 = Sunday, 1 = Monday, ..., 6 = Saturday
+      const hour = cstTime.getHours();
+
+      // Sun-Thu: 7AM-7PM (0,1,2,3,4), Fri-Sat: 7AM-9PM (5,6)
+      if (day >= 0 && day <= 4) {
+        // Sunday to Thursday: 7AM-7PM
+        setIsOpen(hour >= 7 && hour < 19);
+      } else {
+        // Friday, Saturday: 7AM-9PM
+        setIsOpen(hour >= 7 && hour < 21);
+      }
+    };
+
+    checkIfOpen();
+    const interval = setInterval(checkIfOpen, 60000); // Check every minute
+    return () => clearInterval(interval);
+  }, []);
+
   const categories = [
     { id: "Matcha Specialties", label: "Matcha Specialties", emoji: "🍵", image: "/chowbus_menu_evanston_enhanced/matcha_specialties/002_matcha_latte_hot_or_iced.jpg" },
     { id: "Coffee & Espresso", label: "Coffee & Espresso", emoji: "☕", image: "/chowbus_menu_evanston_enhanced/coffee_espresso/045_latte_choose_your_fav.jpg" },
@@ -405,32 +429,23 @@ export default function EvanstonMenuPage() {
   })).filter(group => group.items.length > 0);
   return (
     <main className="w-full min-h-screen bg-cream">
-      {/* Header */}
-      <section className="py-10 sm:py-12 bg-warm-light relative overflow-hidden">
+      {/* Header & Order Online Section */}
+      <section className="py-12 sm:py-16 bg-warm-light relative overflow-hidden">
         {/* Floating background elements */}
         <div className="absolute top-12 right-10 w-2 h-2 bg-accent-solid/20 rounded-full animate-float"></div>
         <div className="absolute bottom-10 left-16 w-1.5 h-1.5 bg-accent-solid/30 rounded-full animate-float" style={{animationDelay: '3s'}}></div>
 
-        <div className="max-w-7xl mx-auto px-6 sm:px-8 text-center relative z-10">
+        <div className="max-w-5xl mx-auto px-6 sm:px-8 text-center relative z-10">
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-light mb-4 text-warm-dark leading-tight text-balance">
             Evanston Location
           </h1>
           <div className="w-20 h-1 bg-sage mx-auto rounded-full mb-4"></div>
-          <p className="text-lg sm:text-xl text-gray-700 font-light max-w-3xl mx-auto leading-relaxed text-balance">
-            Outdoor dining surrounded by nature
+          <p className="text-sm sm:text-base text-gray-600 font-light mb-8">
+            2012 Central Street • Evanston, IL 60201
           </p>
-          <div className="mt-4">
-            <p className="text-sm sm:text-base text-gray-600 font-light">
-              2012 Central Street • Evanston, IL 60201
-            </p>
-          </div>
-        </div>
-      </section>
 
-      {/* Order Online Section */}
-      <section className="py-8 sm:py-10 bg-white">
-        <div className="max-w-4xl mx-auto px-6 sm:px-8 text-center">
-          <div className="card-modern p-6 sm:p-8 hover-glow">
+          {/* Order Online Card */}
+          <div className="card-modern px-10 sm:px-12 py-6 sm:py-8 hover-glow bg-white/80 backdrop-blur-sm inline-block">
             <div className="space-y-4">
               <div className="flex justify-center">
                 <div className="w-12 h-12 bg-sage/10 rounded-full flex items-center justify-center animate-pulse-warm">
@@ -442,8 +457,8 @@ export default function EvanstonMenuPage() {
               </h2>
               <div className="flex items-center justify-center space-x-4 text-xs sm:text-sm text-gray-600">
                 <span className="flex items-center">
-                  <span className="w-2 h-2 bg-sage rounded-full mr-2"></span>
-                  Currently Open
+                  <span className={`w-2 h-2 rounded-full mr-2 ${isOpen ? 'bg-sage' : 'bg-red-500'}`}></span>
+                  Currently {isOpen ? 'Open' : 'Closed'}
                 </span>
                 <span>•</span>
                 <span>Sun-Thu: 7AM-7PM • Fri-Sat: 7AM-9PM</span>
@@ -455,12 +470,12 @@ export default function EvanstonMenuPage() {
                   rel="noopener noreferrer"
                   className="
                     inline-block px-8 sm:px-10 py-4 sm:py-5 font-medium text-base sm:text-lg
-                    transition-all duration-300 hover:scale-105 btn-warm hover-glow rounded-full
+                    transition-all duration-300 hover:scale-105 btn-warm hover-glow !rounded-full
                     bg-accent-solid text-white hover:bg-warm-dark shadow-warm-lg
                     border-2 border-accent-solid hover:border-warm-dark
                   "
                 >
-                  Order Now via ChowBus
+                  Order Now
                 </a>
               </div>
             </div>

@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import GoogleReviewsMarquee from "../../components/GoogleReviewsMarquee";
 
@@ -310,6 +310,30 @@ const northParkMenu: MenuItem[] = [
 ];
 
 export default function NorthParkMenuPage() {
+  const [isOpen, setIsOpen] = useState(true);
+
+  useEffect(() => {
+    const checkIfOpen = () => {
+      const now = new Date();
+      const cstTime = new Date(now.toLocaleString("en-US", { timeZone: "America/Chicago" }));
+      const day = cstTime.getDay(); // 0 = Sunday, 1 = Monday, ..., 6 = Saturday
+      const hour = cstTime.getHours();
+
+      // Mon-Thu: 8AM-8PM (1-4), Fri-Sun: 8AM-9PM (5,6,0)
+      if (day >= 1 && day <= 4) {
+        // Monday to Thursday: 8AM-8PM
+        setIsOpen(hour >= 8 && hour < 20);
+      } else {
+        // Friday, Saturday, Sunday: 8AM-9PM
+        setIsOpen(hour >= 8 && hour < 21);
+      }
+    };
+
+    checkIfOpen();
+    const interval = setInterval(checkIfOpen, 60000); // Check every minute
+    return () => clearInterval(interval);
+  }, []);
+
   const categories = [
     { id: "Matcha Specialties", label: "Matcha Specialties", emoji: "🍵", image: "/chowbus_menu_north_park_enhanced/ohh_matcha/69_matcha latte (hot or iced).jpg" },
     { id: "Coffee & Espresso", label: "Coffee & Espresso", emoji: "☕", image: "/chowbus_menu_north_park_enhanced/coffee_more/96_latte.jpg" },
@@ -331,32 +355,23 @@ export default function NorthParkMenuPage() {
   })).filter(group => group.items.length > 0);
   return (
     <main className="w-full min-h-screen bg-cream">
-      {/* Header */}
-      <section className="py-10 sm:py-12 bg-warm-light relative overflow-hidden">
+      {/* Header & Order Online Section */}
+      <section className="py-12 sm:py-16 bg-warm-light relative overflow-hidden">
         {/* Floating background elements */}
         <div className="absolute top-10 left-10 w-2 h-2 bg-accent-solid/20 rounded-full animate-float"></div>
         <div className="absolute bottom-12 right-16 w-1.5 h-1.5 bg-accent-solid/30 rounded-full animate-float" style={{animationDelay: '2s'}}></div>
 
-        <div className="max-w-7xl mx-auto px-6 sm:px-8 text-center relative z-10">
+        <div className="max-w-5xl mx-auto px-6 sm:px-8 text-center relative z-10">
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-light mb-4 text-warm-dark leading-tight text-balance">
             North Park Location
           </h1>
           <div className="w-20 h-1 bg-sage mx-auto rounded-full mb-4"></div>
-          <p className="text-lg sm:text-xl text-gray-700 font-light max-w-3xl mx-auto leading-relaxed text-balance">
-            Urban garden oasis in the heart of the city
+          <p className="text-sm sm:text-base text-gray-600 font-light mb-8">
+            3257 W Bryn Mawr Ave, Chicago, IL 60659
           </p>
-          <div className="mt-4">
-            <p className="text-sm sm:text-base text-gray-600 font-light">
-              3257 W Bryn Mawr Ave, Chicago, IL 60659
-            </p>
-          </div>
-        </div>
-      </section>
 
-      {/* Order Online Section */}
-      <section className="py-8 sm:py-10 bg-white">
-        <div className="max-w-4xl mx-auto px-6 sm:px-8 text-center">
-          <div className="card-modern p-6 sm:p-8 hover-glow">
+          {/* Order Online Card */}
+          <div className="card-modern px-10 sm:px-12 py-6 sm:py-8 hover-glow bg-white/80 backdrop-blur-sm inline-block">
             <div className="space-y-4">
               <div className="flex justify-center">
                 <div className="w-12 h-12 bg-sage/10 rounded-full flex items-center justify-center animate-pulse-warm">
@@ -368,8 +383,8 @@ export default function NorthParkMenuPage() {
               </h2>
               <div className="flex items-center justify-center space-x-4 text-xs sm:text-sm text-gray-600">
                 <span className="flex items-center">
-                  <span className="w-2 h-2 bg-sage rounded-full mr-2"></span>
-                  Currently Open
+                  <span className={`w-2 h-2 rounded-full mr-2 ${isOpen ? 'bg-sage' : 'bg-red-500'}`}></span>
+                  Currently {isOpen ? 'Open' : 'Closed'}
                 </span>
                 <span>•</span>
                 <span>Mon-Thu: 8AM-8PM • Fri-Sun: 8AM-9PM</span>
@@ -381,12 +396,12 @@ export default function NorthParkMenuPage() {
                   rel="noopener noreferrer"
                   className="
                     inline-block px-8 sm:px-10 py-4 sm:py-5 font-medium text-base sm:text-lg
-                    transition-all duration-300 hover:scale-105 btn-warm hover-glow rounded-full
+                    transition-all duration-300 hover:scale-105 btn-warm hover-glow !rounded-full
                     bg-accent-solid text-white hover:bg-warm-dark shadow-warm-lg
                     border-2 border-accent-solid hover:border-warm-dark
                   "
                 >
-                  Order Now via ChowBus
+                  Order Now
                 </a>
               </div>
             </div>
