@@ -434,8 +434,7 @@ export default function NorthParkMenuPage() {
                     <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent"></div>
                   </div>
                   <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6">
-                    <h3 className="text-2xl sm:text-3xl font-light text-white flex items-center gap-3">
-                      <span className="text-2xl">{group.emoji}</span>
+                    <h3 className="text-2xl sm:text-3xl font-light text-white">
                       {group.label}
                     </h3>
                   </div>

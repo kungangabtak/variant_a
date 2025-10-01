@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import InstagramCarousel from "./components/InstagramCarousel";
 
@@ -127,18 +127,33 @@ const useScrollAnimation = () => {
 
 export default function Home() {
   useScrollAnimation();
+  const [currentImage, setCurrentImage] = useState(0);
+  const images = ['/cover.jpg', '/cover2.jpg'];
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImage((prev) => (prev + 1) % images.length);
+    }, 5000); // Change every 5 seconds
+
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <main className="w-full min-h-screen bg-cream">
       {/* Hero Section */}
       <section className="h-[70vh] flex items-center justify-center relative overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <img
-            src="/cover.jpg"
-            alt="Outdoor Café Patio Ambiance"
-            className="w-full h-full object-cover"
-            loading="eager"
-          />
+          {images.map((image, index) => (
+            <img
+              key={image}
+              src={image}
+              alt="Outdoor Café Patio Ambiance"
+              className={`w-full h-full object-cover absolute inset-0 transition-opacity duration-1000 ${
+                index === currentImage ? 'opacity-100' : 'opacity-0'
+              }`}
+              loading="eager"
+            />
+          ))}
           {/* Dark overlay */}
           <div className="absolute inset-0 bg-warm-dark/70"></div>
         </div>
